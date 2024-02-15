@@ -9,9 +9,9 @@ function App() {
   console.log(dogs);
 
   return (
-    <main className='App'> 
+    <main className='App'>
       <h1>BarkEnd</h1>
-      <Dogs/>
+      <Dogs dogs={dogs} />
     </main>
   );
 }
