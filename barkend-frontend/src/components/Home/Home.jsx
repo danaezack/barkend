@@ -1,7 +1,7 @@
 import './Home.css';
-import Header from '../Header/Header.js';
-import Filters from '../Filters/Filters.js';
-import Dogs from '../Dogs/Dogs.js'
+import Header from '../Header/Header.jsx';
+import Filters from '../Filters/Filters.jsx';
+import Dogs from '../Dogs/Dogs.jsx'
 
 function Home({ dogs }) {
   return (

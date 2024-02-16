@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import Home from '../Home/Home.js';
+import Home from '../Home/Home.jsx';
 import { sampleAnimals } from '../../sampleDoggyData.js';
 
 function App() {
@@ -10,7 +10,6 @@ function App() {
 
   return (
     <main className='App'>
-      <h1>BarkEnd</h1>
       <Home dogs={dogs} />
     </main>
   );
