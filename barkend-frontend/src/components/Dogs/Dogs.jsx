@@ -9,9 +9,12 @@ function Dogs({ dogs }) {
         return (
           <DogCard
             key={dog.id}
+            id={dog.id}
+            age={dog.age}
             name={dog.name}
             size={dog.size}
             breed={dog.breeds.primary}
+            photo={dog.photos[0].medium}
           />
         )
       })}

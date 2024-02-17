@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-title {
+  font-size: 100px;
+  margin: 0;
+}
+
+.right-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.welcome-msg {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 30px;
+  margin: 40px 30px 5px 0;
+}
+
+.nav-bar {
+  margin-right: 30px;
+}
+
+.nav-btn {
+  width: 150px;
+  Height: 30px;
+  margin: 5px;
+  font-size: 20px;
+}

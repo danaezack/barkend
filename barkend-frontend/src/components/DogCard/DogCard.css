@@ -1,0 +1,29 @@
+.card-link {
+  text-decoration: none;
+  color: black;
+}
+
+.dog-card {
+  display: flex;
+  flex-direction: column;
+ justify-content: space-between;
+  border: 2px solid black;
+  margin: 10px;
+  width: 20vw;
+  height: auto;
+  min-width: 150px;
+  min-height: 350px;
+  /* overflow: hidden; */
+}
+
+.dog-card img {
+  height: 250px;
+  object-fit: cover;
+}
+
+.dog-card h2,
+.dog-card h3,
+.dog-card h4 {
+  margin: 2px 0;
+  text-align: center;
+}

@@ -4,15 +4,19 @@ import Filter from '../Filter/Filter.jsx';
 import Search from '../Search/Search.jsx';
 import Dogs from '../Dogs/Dogs.jsx';
 
-function Home({ dogs, setDogs }) {
+function Home({ dogs, setDogs, cleanAnimals }) {
   
   return (
-    <>
-      <Header setDogs={setDogs}/>
-      <Filter setDogs={setDogs} />
-      <Search setDogs={setDogs} />
-      {!dogs.length ? <p>Sorry, there are no dogs that match! Try again.</p> : <Dogs dogs={dogs} /> }
-    </>
+    <main className='home-container'>
+      <Header setDogs={setDogs} cleanAnimals={cleanAnimals} />
+      <div className='content-container'>
+        <Filter setDogs={setDogs} cleanAnimals={cleanAnimals} />
+        <div className='right-container'>
+          <Search setDogs={setDogs} cleanAnimals={cleanAnimals} />
+          {!dogs.length ? <p>Sorry, there are no dogs that match! Try again.</p> : <Dogs dogs={dogs} /> }
+        </div>
+      </div>
+    </main>
   );
 }
 

@@ -1,13 +1,16 @@
 import './DogCard.css';
+import { Link } from 'react-router-dom'
 
-function DogCard({ name, size, breed }) {
+function DogCard({ name, size, breed, id, photo, age }) {
   return (
-    <div className='dog-card'>
-      <h2>{name}</h2>
-      <h3>{size}</h3>
-      <h3>{breed}</h3>
-      <h3> --------- </h3>
-    </div>
+    <Link className='card-link' to={`/dog-details/${id}`}>
+      <div className='dog-card'>
+        <img src={photo} alt={`${name} the ${breed}`}></img>
+        <h2>{name}</h2>
+        <h3>{breed}</h3>
+        <h4>{age} · {size}</h4>
+      </div>
+    </Link>
   )
 }
 
