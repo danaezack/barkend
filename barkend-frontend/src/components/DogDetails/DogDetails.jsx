@@ -17,8 +17,6 @@ function DogDetails({ dogs }) {
   let dog = dogs.find(dog => dog.id === Number(id))
   let images = dog.photos.map(photo => photo.full)
 
-
-
   function handleClick() {
     isFavorited ? setIsFavorited(false) : setIsFavorited(true)
   }
@@ -39,9 +37,13 @@ function DogDetails({ dogs }) {
         <img onClick={() => handleClick()} className={isFavorited ? 'hrt-btn hidden' : 'hrt-btn'} src={hrtBtn} alt="close button"/>
         <img onClick={() => handleClick()} className={isFavorited ? 'hrt-btn-fill flip' : 'hrt-btn-fill hidden'} src={hrtBtnFill} alt="close button"/>
         <div className="main-details-container">
-          <h1 className='name'>Hi, I'm {dog.name}</h1>
+          <h1 className='name'>Hi, I'm {dog.name}.</h1>
           <p className='sub-details'>{dog.age} • {dog.gender} • {dog.breeds.primary}</p>
-          <p className='sub-details'>Qualities: {dog.tags.join(', ')}</p>
+          <ul>{dog.name}'s Qualities:
+          {dog.tags.map(tag => (
+            <li> • {tag}</li>
+          ))}
+          </ul>
         </div>
         <div className="inquire-container">
           <h3>Interested in {dog.name}?</h3>

@@ -43,12 +43,17 @@ p {
 }
 
 .hrt-btn-fill:hover {
-  transform: scale(1.2) scaleX(1);
+  transform: scale(1.2);
 }
 
 .flip {
-  transform: scaleX(-1);
-  transition: .7s ;
+  animation: flip .5s ease-out
+}
+
+@keyframes flip {
+  100% {
+    transform: scaleX(-1) scale(1.2);
+  }
 }
 
 .image-carousel {
@@ -66,8 +71,6 @@ p {
   transition: scale(1.2);
 }
 
-
-
 .swiper {
   width: 85%;
 
@@ -84,6 +87,17 @@ p {
   align-items: center;
   justify-content: space-evenly;
   width: 50%;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+li {
+  padding: 2px;
 }
 
 .dog-img {
@@ -104,7 +118,8 @@ p {
   background-color: var(--main-color);
   border-radius: 30px;
   height: 20%;
-  width: 50%;
+  width: 50% fit-content;
+  padding: 10px;
 }
 
 .hidden {
