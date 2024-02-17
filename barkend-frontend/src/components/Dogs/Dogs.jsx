@@ -1,16 +1,17 @@
 import './Dogs.css';
-import DogCard from '../DogCard/DogCard.js'
+import DogCard from '../DogCard/DogCard.jsx'
 
 function Dogs({ dogs }) {
 
   return (
     <div className='dogs-container'>
-      <h2>Dogs go here!</h2>
       {dogs.map(dog => {
         return (
           <DogCard
             key={dog.id}
             name={dog.name}
+            size={dog.size}
+            breed={dog.breeds.primary}
           />
         )
       })}
