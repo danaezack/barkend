@@ -6,9 +6,8 @@ import Home from '../Home/Home.jsx';
 import { sampleAnimals } from '../../sampleDoggyData.js';
 
 function App() {
-
   const [dogs, setDogs] = useState(sampleAnimals);
-  console.log(dogs)
+  
   return (
     <main className='App'>
       <Home dogs={dogs} setDogs={setDogs} />
