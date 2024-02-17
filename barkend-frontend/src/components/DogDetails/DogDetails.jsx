@@ -7,14 +7,21 @@ import { Navigation } from 'swiper/modules';
 import xBtn from "../../images/x-lg.svg"
 import hrtBtn from "../../images/bookmark-heart.svg"
 import hrtBtnFill from "../../images/bookmark-heart-fill.svg"
+import { useState } from 'react';
 
 
 
 function DogDetails({ dogs }) {
-  // const { id } = useParams()
-
-  let dog = dogs[1]
+  const [isFavorited, setIsFavorited] = useState(false)
+  const { id } = useParams()
+  let dog = dogs.find(dog => dog.id === Number(id))
   let images = dog.photos.map(photo => photo.full)
+
+
+
+  function handleClick() {
+    isFavorited ? setIsFavorited(false) : setIsFavorited(true)
+  }
 
   return (
     <div className="details-container">
@@ -26,9 +33,11 @@ function DogDetails({ dogs }) {
         </Swiper>
       </aside>
       <main className="dog-details">
-      <img className='x-btn' src={xBtn} alt="close button" />
-      <img className='hrt-btn' src={hrtBtn} alt="close button" />
-      <img className='hrt-btn-fill hidden' src={hrtBtnFill} alt="close button" />
+        <Link to={'/'}>
+          <img className='x-btn' src={xBtn} alt="close button" />
+        </Link>
+        <img onClick={() => handleClick()} className={isFavorited ? 'hrt-btn hidden' : 'hrt-btn'} src={hrtBtn} alt="close button"/>
+        <img onClick={() => handleClick()} className={isFavorited ? 'hrt-btn-fill flip' : 'hrt-btn-fill hidden'} src={hrtBtnFill} alt="close button"/>
         <div className="main-details-container">
           <h1 className='name'>Hi, I'm {dog.name}</h1>
           <p className='sub-details'>{dog.age} • {dog.gender} • {dog.breeds.primary}</p>
