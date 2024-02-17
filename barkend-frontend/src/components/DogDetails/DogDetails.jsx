@@ -34,7 +34,7 @@ function DogDetails({ dogs }) {
         <Link to={'/'}>
           <img className='x-btn' src={xBtn} alt="close button" />
         </Link>
-        <img onClick={() => handleClick()} className={isFavorited ? 'hrt-btn hidden' : 'hrt-btn flip'} src={hrtBtn} alt="close button"/>
+        <img onClick={() => handleClick()} className={isFavorited ? 'hrt-btn hidden' : 'hrt-btn'} src={hrtBtn} alt="close button"/>
         <img onClick={() => handleClick()} className={isFavorited ? 'hrt-btn-fill flip' : 'hrt-btn-fill hidden'} src={hrtBtnFill} alt="close button"/>
         <div className="main-details-container">
           <h1 className='name'>Hi, I'm {dog.name}.</h1>
