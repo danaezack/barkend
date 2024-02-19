@@ -1,9 +1,52 @@
+
 const express = require('express');
-const app = express();
+const sampleDogs =require('./data-cleaning/sampleData.js');
+const db = require('./db/db')
+const router = require('./routes/router.js')
+
+
+const simplifyData = require('./data-cleaning/data-cleaning.js')
+
+
 const PORT = process.env.PORT || 3001;
-const sampleDogs = require('./sampleData')
+const app = express();
 
 app.use(express.json());
+app.use(router);
+
+console.log(simplifyData());
+// const db = new pg.Client({
+//   user: 'postgres',
+//   host: 'barkend-db-1.c7qgkmqa6pkb.us-west-1.rds.amazonaws.com',
+//   database: 'barkend_db_pgsql',
+//   password: 'backend2310',
+//   port: "5432",
+// });
+
+// const db = new pg.Client({
+//   user: 'postgres',
+//   host: 'database-1.c50aguo6s8fu.us-west-1.rds.amazonaws.com',
+//   database: 'postgres',
+//   password: 'barkend123',
+//   port: "5432",
+// });
+
+// db.connect((err) => {
+//   if (err) {
+//     console.error('Error connecting to the database:', err);
+//   } else {
+//     console.log('Connected to the database successfully!');
+//   }
+// });
+
+
+db.raw('SELECT  1+1 AS result')
+  .then(() => {
+    console.log('Connected to the database successfully!');
+  })
+  .catch((err) => {
+    console.error('Error connecting to the database:', err);
+  });
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
