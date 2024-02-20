@@ -3,6 +3,7 @@
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
+
 module.exports = {
   development: {
     client: 'postgresql',
@@ -17,8 +18,12 @@ module.exports = {
       max: 10
     },
     migrations: {
+      directory: '/Users/ricky/turing/3mod/barkend/barkend-backend/db/migrations',
       tableName: 'knex_migrations'
-    }
+    },
+    seeds: {
+      directory: './'
+    },
   },
 
   // production: {
