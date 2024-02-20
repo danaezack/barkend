@@ -3,7 +3,7 @@ const sampleDogs = require("./sampleData");
 function simplifyData() {
   const cleanData = sampleDogs.map(dog => {
     return {
-      "id": dog.id,
+      "dogid": dog.id,
       "type": dog.type,
       "breeds": dog.breeds.primary,
       "colors": dog.colors.primary,
@@ -18,14 +18,16 @@ function simplifyData() {
       "contact": {
           "email": dog.contact.email,
           "phone": dog.contact.phone
-      }
+        },
+      "favorited": false
     }
-  });
+  }).filter(dog => dog.photos.length)
 
-  // const filterPhotos = cleanData.filter(dog => dog.photos.length)
-  // console.log(filterPhotos);
+  console.log(cleanData);
   console.log(cleanData.length);
   return cleanData;
 }
 
-module.exports = simplifyData()
+// simplifyData();
+
+module.exports = simplifyData;
