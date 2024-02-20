@@ -18,7 +18,7 @@ module.exports = {
       max: 10
     },
     migrations: {
-      directory: '/Users/ricky/turing/3mod/barkend/barkend-backend/db/migrations',
+      directory: './migrations',
       tableName: 'knex_migrations'
     },
     seeds: {
