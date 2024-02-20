@@ -40,10 +40,13 @@ exports.up = function(knex) {
   })
   .createTable('photos', function (table) {
     table.increments('id').primary();
-    table.integer('dog_id').unsigned()
-    table.foreign('dog_id').references('dogs.id')
+    table.string('photo_url');
+    table.string('size');
+    table.integer('dog_id').unsigned();
+    table.foreign('dog_id').references('dogs.id');
     table.timestamps(true, true);
   })
+
   .createTable('contact', function (table) {
     table.increments('id').primary();
     table.string('email'),
@@ -61,9 +64,9 @@ exports.up = function(knex) {
 
 exports.down = function(knex) {
   return knex.schema
-    .dropTable('dogs')
     .dropTable('attributes')
     .dropTable('environment')
     .dropTable('photos')
     .dropTable('contact')
+    .dropTable('dogs')
 };
