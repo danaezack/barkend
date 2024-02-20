@@ -126,4 +126,4 @@ const createAttribute = (knex, footnote) => {
 //   } catch (error) {
 //     console.log(`Error seeding data: ${error}`)
 //   }
-// };
+// }; dss
