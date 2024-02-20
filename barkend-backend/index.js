@@ -3,10 +3,9 @@ const express = require('express');
 const sampleDogs =require('./data-cleaning/sampleData.js');
 const db = require('./db/db')
 const router = require('./routes/router.js')
-
+const knexfile = require ('./db/knexfile.js')
 
 const simplifyData = require('./data-cleaning/data-cleaning.js')
-
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -15,54 +14,39 @@ app.use(express.json());
 app.use(router);
 
 console.log(simplifyData());
-// const db = new pg.Client({
-//   user: 'postgres',
-//   host: 'barkend-db-1.c7qgkmqa6pkb.us-west-1.rds.amazonaws.com',
-//   database: 'barkend_db_pgsql',
-//   password: 'backend2310',
-//   port: "5432",
-// });
 
-// const db = new pg.Client({
-//   user: 'postgres',
-//   host: 'database-1.c50aguo6s8fu.us-west-1.rds.amazonaws.com',
-//   database: 'postgres',
-//   password: 'barkend123',
-//   port: "5432",
-// });
+app.get('/api/v1/dogs', async (req, res) => {
+  try {
+    // Fetch basic dog data from the database
+    let dogs = await db('dogs').select('*');
 
-// db.connect((err) => {
-//   if (err) {
-//     console.error('Error connecting to the database:', err);
-//   } else {
-//     console.log('Connected to the database successfully!');
-//   }
-// });
+    if (dogs.length === 0) {
+      return res.status(404).json({ error: "Pet not found" });
+    }
 
+    dogs = await Promise.all(dogs.map(async (dog) => {
+      const attributes = await db('attributes').where('dog_id', dog.id).first();
+      const environment = await db('environment').where('dog_id', dog.id).first();
+      const photos = await db('photos').where('dog_id', dog.id).select('photo_url');
+      const contact = await db('contact').where('dog_id', dog.id).first();
 
-db.raw('SELECT  1+1 AS result')
-  .then(() => {
-    console.log('Connected to the database successfully!');
-  })
-  .catch((err) => {
-    console.error('Error connecting to the database:', err);
-  });
+      // Combine the dog data with its related data
+      return {
+        ...dog,
+        attributes,
+        environment,
+        photos: photos.map(photo => photo.photo_url), // Assuming you only want the URLs
+        contact
+      };
+    }));
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
-app.locals.dogs = sampleDogs;
-
-app.get('/api/v1/dogs', (req, res) => {
-  const dogs = app.locals.dogs;
-
-  if(!dogs) {
-    res.status(404).json("Pet not found");
+    res.json({ dogs });
+  } catch (error) {
+    console.error('Error fetching dogs:', error);
+    res.status(500).json({ error: "Internal server error" });
   }
-  
-  res.json( { dogs } );
 });
+
 
 app.post('/api/v1/dogs', (req, res) => {
   const id = Date.now();
