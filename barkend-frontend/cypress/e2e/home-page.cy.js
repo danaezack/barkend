@@ -3,8 +3,8 @@ describe('User flows for home page', () => {
     cy.intercept('GET', 'http://localhost:3001/api/v1/dogs', {
       statusCode: 200,
       fixture: "dogs"
-    })
-    cy.visit('http://localhost:3000/main')
+    });
+    cy.visit('http://localhost:3000/main');
   });
 
   it('renders the home page and expected elements', () => {
@@ -33,8 +33,8 @@ describe('User flows for home page', () => {
     cy.url().should('eq', 'http://localhost:3000/dog-details/1');
     cy.get('.image-carousel').find('img').first().should('have.attr', 'src', 'https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734971/1/?bust=1708020281');
     cy.get('.image-carousel').find('img').last().should('have.attr', 'src', 'https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734971/3/?bust=1708020282');
-    cy.get('.swiper-button-next').should('exist')
-    cy.get('.swiper-button-prev').should('exist')
+    cy.get('.swiper-button-next').should('exist');
+    cy.get('.swiper-button-prev').should('exist');
     cy.get('.name').contains(`Hi, I'm Whiskey`);
     cy.get('.sub-details').contains('Adult • Male • Cardigan Welsh Corgi');
     cy.get('ul').contains(`Whiskey's Qualities`);
@@ -115,7 +115,7 @@ describe('User flows for home page', () => {
   it('should notify the user if the API fails to fetch the dog data', () => {
     cy.intercept('GET', 'http://localhost:3001/api/v1/dogs', {
       statusCode: 500
-    })
+    });
     cy.get('.error-msg').contains('Failed to retrieve dogs... Please try again later.');
   })
 })

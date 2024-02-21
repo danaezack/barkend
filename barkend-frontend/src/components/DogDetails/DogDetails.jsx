@@ -1,25 +1,23 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { dogShape } from '../../propTypes/dogShape.js';
-import xBtn from "../../images/x-lg.svg"
-import hrtBtn from "../../images/bookmark-heart.svg"
-import hrtBtnFill from "../../images/bookmark-heart-fill.svg"
+import xBtn from "../../images/x-lg.svg";
+import hrtBtn from "../../images/bookmark-heart.svg";
+import hrtBtnFill from "../../images/bookmark-heart-fill.svg";
 import PropTypes from 'prop-types';
 import 'swiper/css/navigation';
-import 'swiper/css'
-import './DogDetails.css'
-
-
+import 'swiper/css';
+import './DogDetails.css';
 
 function DogDetails({ allDogs }) {
-  const [isFavorited, setIsFavorited] = useState(false)
-  const { id } = useParams()
-  let dog = allDogs.find(dog => dog.id === Number(id))
+  const [isFavorited, setIsFavorited] = useState(false);
+  const { id } = useParams();
+  let dog = allDogs.find(dog => dog.id === Number(id));
 
   function handleClick() {
-    isFavorited ? setIsFavorited(false) : setIsFavorited(true)
+    isFavorited ? setIsFavorited(false) : setIsFavorited(true);
   }
 
   if (!allDogs.length || !dog) {
@@ -57,11 +55,11 @@ function DogDetails({ allDogs }) {
         </div>
       </main>
     </div>
-  )
+  );
 }
 
-export default DogDetails
+export default DogDetails;
 
 DogDetails.propTypes = {
   allDogs: PropTypes.arrayOf(dogShape).isRequired,
-}
+};

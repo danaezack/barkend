@@ -41,15 +41,15 @@ function Home({ allDogs, error }) {
 
   function renderDogsContainer() {
     if (error) {
-      return <p className='error-msg'>{error}</p>
+      return <p className='error-msg'>{error}</p>;
     };
     if (initialLoad) {
-      return <p className='loading-msg'>Loading dogs...</p>
+      return <p className='loading-msg'>Loading dogs...</p>;
     };
     if (!filteredDogs.length) {
-      return <p className='no-match-msg'>Sorry, there are no dogs that match! Try again.</p>
+      return <p className='no-match-msg'>Sorry, there are no dogs that match! Try again.</p>;
     } else {
-      return <Dogs filteredDogs={filteredDogs} />
+      return <Dogs filteredDogs={filteredDogs} />;
     }
   }
 
@@ -72,33 +72,13 @@ function Home({ allDogs, error }) {
   );
 }
 
-
-
-// {error && (
-//   // Display error message if there's an error
-//   <p>{error}</p>
-// )}
-
-// {initialLoad && (
-//   // Display loading message while fetching data
-//   <p className='loading-msg'>Loading dogs...</p>
-// )}
-
-// {!initialLoad && !error && !filteredDogs.length && (
-//   // Display message when there are no matching dogs
-//   <p className='no-match-msg'>Sorry, there are no dogs that match! Try again.</p>
-// )}
-
-// {!initialLoad && !error && filteredDogs.length > 0 && (
-//   // Render Dogs component if there are matching dogs
-//   <Dogs filteredDogs={filteredDogs} />
-// )}
-
-
-
 export default Home;
 
 Home.propTypes = {
   allDogs: PropTypes.arrayOf(dogShape).isRequired,
-}
+  error: PropTypes.string
+};
 
+Home.defaultProps = {
+  error: null
+};

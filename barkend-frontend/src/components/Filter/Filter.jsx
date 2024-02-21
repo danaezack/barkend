@@ -15,7 +15,7 @@ function Filter({ selectedSizes, setSelectedSizes }) {
 
   return (
     <div className='filter-container'>
-      <h2>Filter By:</h2>
+      <h2>Filter By Size:</h2>
       <div className='size-toggle-buttons'>
         <button
           className={`size-toggle-btn small-btn ${selectedSizes.includes('Small') ? 'active' : ''}`}

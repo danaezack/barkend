@@ -3,9 +3,11 @@
   flex-direction: column;
   align-items: center;
   width: 15%;
-  /* background-color: rgb(167, 167, 167); */
   background-color: lightgrey;
-  /* border-right: 3px solid var(--secondary-color); */
+}
+
+.filter-container h2 {
+  text-align: center;
 }
 
 .size-toggle-buttons {
