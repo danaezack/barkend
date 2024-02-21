@@ -37,4 +37,5 @@
 .dog-card > h3, h4 {
   font-family: var(--secondary-font);
   font-weight: 300;
+  color: white;
 }

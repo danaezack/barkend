@@ -1,3 +1,4 @@
+import {PropTypes, string} from 'prop-types';
 import './Filter.css';
 
 function Filter({ selectedSizes, setSelectedSizes }) {
@@ -40,3 +41,8 @@ function Filter({ selectedSizes, setSelectedSizes }) {
 }
 
 export default Filter;
+
+Filter.propTypes = {
+  selectedSizes: PropTypes.arrayOf(string).isRequired,
+  setSelectedSizes: PropTypes.func.isRequired
+}

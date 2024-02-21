@@ -1,5 +1,7 @@
-import './Search.css';
 import { useState } from 'react';
+import {PropTypes} from 'prop-types';
+import './Search.css';
+
 
 function Search({ setBreed }) {
   const [breedValue, setBreedValue] = useState('');
@@ -25,3 +27,7 @@ function Search({ setBreed }) {
 }
 
 export default Search;
+
+Search.propTypes = {
+  setBreed: PropTypes.func.isRequired
+}

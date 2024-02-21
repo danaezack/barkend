@@ -1,6 +1,8 @@
-import './Hero.css'
-import Header from '../Header/Header'
 import { Link } from 'react-router-dom'
+import { dogShape } from '../../propTypes/dogShape';
+import PropTypes from 'prop-types';
+import Header from '../Header/Header'
+import './Hero.css'
 
 function Hero({ allDogs, setFilteredDogs}) {
   return (
@@ -19,3 +21,8 @@ function Hero({ allDogs, setFilteredDogs}) {
 }
 
 export default Hero
+
+Hero.propTypes = {
+  allDogs: PropTypes.arrayOf(dogShape).isRequired,
+  setFilteredDogs: PropTypes.func.isRequired,
+}

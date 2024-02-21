@@ -1,7 +1,9 @@
-import './Dogs.css';
+import { dogShape } from '../../propTypes/dogShape.js';
 import DogCard from '../DogCard/DogCard.jsx'
+import PropTypes from 'prop-types';
+import './Dogs.css';
 
-function Dogs({ filteredDogs, allDogs }) {
+function Dogs({ filteredDogs }) {
 
   return (
     <div className='dogs-container'>
@@ -23,3 +25,11 @@ function Dogs({ filteredDogs, allDogs }) {
 }
 
 export default Dogs;
+
+Dogs.propTypes = {
+  filteredDogs: PropTypes.arrayOf(dogShape).isRequired,
+}
+
+Dogs.defaultProps = {
+  filteredDogs: []
+}
