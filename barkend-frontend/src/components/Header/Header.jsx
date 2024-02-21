@@ -1,11 +1,8 @@
 import './Header.css';
 import { Link } from 'react-router-dom';
 
-function Header({ setFilteredDogs, allDogs }) {
-  
-  function viewAllDogs() {
-    setFilteredDogs(allDogs)
-  }
+function Header({ viewAllDogs }) {
+
   
   return (
     <header className='header'>
