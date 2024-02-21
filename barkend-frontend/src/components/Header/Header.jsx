@@ -16,7 +16,7 @@ function Header({ setDogs, sampleAnimals }) {
           <Link to='/'>
             <button className='nav-btn'>Saved Dogs</button>
           </Link>
-          <Link to='/'>
+          <Link to='/main'>
             <button className='nav-btn' onClick={viewAllDogs}>All Dogs</button>
           </Link>
         </nav>
