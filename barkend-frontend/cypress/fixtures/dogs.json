@@ -1,0 +1,242 @@
+[
+  {
+      "id": 1,
+      "dogid": 70734971,
+      "type": "Dog",
+      "breeds": "Cardigan Welsh Corgi",
+      "colors": "Yellow / Tan / Blond / Fawn",
+      "age": "Adult",
+      "gender": "Male",
+      "size": "Small",
+      "tags": "Friendly, Smart, Playful, Loyal, Affectionate, Funny",
+      "name": "Whiskey",
+      "favorited": false,
+      "created_at": "2024-02-20T03:02:57.773Z",
+      "updated_at": "2024-02-20T03:02:57.773Z",
+      "attributes": {
+          "id": 1,
+          "spayed_neutered": false,
+          "house_trained": true,
+          "special_needs": false,
+          "shots_current": true,
+          "dog_id": 1,
+          "created_at": "2024-02-20T03:02:57.813Z",
+          "updated_at": "2024-02-20T03:02:57.813Z"
+      },
+      "environment": {
+          "id": 1,
+          "children": true,
+          "dogs": true,
+          "cats": null,
+          "dog_id": 1,
+          "created_at": "2024-02-20T03:02:57.853Z",
+          "updated_at": "2024-02-20T03:02:57.853Z"
+      },
+      "photos": [
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734971/1/?bust=1708020281",
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734971/2/?bust=1708020282",
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734971/3/?bust=1708020282"
+      ],
+      "contact": {
+          "id": 1,
+          "email": "Inquire@Apollosupportandrescue.org",
+          "phone": "(817) 658-9738",
+          "dog_id": 1,
+          "created_at": "2024-02-20T03:02:58.031Z",
+          "updated_at": "2024-02-20T03:02:58.031Z"
+      }
+  },
+  {
+      "id": 2,
+      "dogid": 70734969,
+      "type": "Dog",
+      "breeds": "Beagle",
+      "colors": "Brown / Chocolate",
+      "age": "Young",
+      "gender": "Female",
+      "size": "Medium",
+      "tags": "Friendly, Affectionate, Loyal, Gentle, Playful, Smart, Funny",
+      "name": "Twix ",
+      "favorited": false,
+      "created_at": "2024-02-20T03:02:58.072Z",
+      "updated_at": "2024-02-20T03:02:58.072Z",
+      "attributes": {
+          "id": 2,
+          "spayed_neutered": true,
+          "house_trained": false,
+          "special_needs": false,
+          "shots_current": true,
+          "dog_id": 2,
+          "created_at": "2024-02-20T03:02:58.115Z",
+          "updated_at": "2024-02-20T03:02:58.115Z"
+      },
+      "environment": {
+          "id": 2,
+          "children": null,
+          "dogs": true,
+          "cats": true,
+          "dog_id": 2,
+          "created_at": "2024-02-20T03:02:58.170Z",
+          "updated_at": "2024-02-20T03:02:58.170Z"
+      },
+      "photos": [
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734969/2/?bust=1708020158",
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734969/1/?bust=1708020157",
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734969/3/?bust=1708020159",
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734969/4/?bust=1708020159"
+      ],
+      "contact": {
+          "id": 2,
+          "email": "traceymrobertson@aol.com",
+          "phone": "2057920197",
+          "dog_id": 2,
+          "created_at": "2024-02-20T03:02:58.393Z",
+          "updated_at": "2024-02-20T03:02:58.393Z"
+      }
+  },
+  {
+      "id": 3,
+      "dogid": 70734921,
+      "type": "Dog",
+      "breeds": "Goldendoodle",
+      "colors": "Black",
+      "age": "Baby",
+      "gender": "Female",
+      "size": "Large",
+      "tags": "Friendly, Affectionate, Gentle, Playful, Smart, Energetic, Loves Kisses",
+      "name": "PONI-TEXAS",
+      "favorited": false,
+      "created_at": "2024-02-20T03:02:58.434Z",
+      "updated_at": "2024-02-20T03:02:58.434Z",
+      "attributes": {
+          "id": 3,
+          "spayed_neutered": false,
+          "house_trained": true,
+          "special_needs": false,
+          "shots_current": true,
+          "dog_id": 3,
+          "created_at": "2024-02-20T03:02:58.477Z",
+          "updated_at": "2024-02-20T03:02:58.477Z"
+      },
+      "environment": {
+          "id": 3,
+          "children": true,
+          "dogs": true,
+          "cats": null,
+          "dog_id": 3,
+          "created_at": "2024-02-20T03:02:58.517Z",
+          "updated_at": "2024-02-20T03:02:58.517Z"
+      },
+      "photos": [
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734921/4/?bust=1708020144",
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734921/1/?bust=1708020141",
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734921/2/?bust=1708020142",
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734921/3/?bust=1708020143",
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734921/5/?bust=1708020145"
+      ],
+      "contact": {
+          "id": 3,
+          "email": "rescue@idogdoodlerescue.org",
+          "phone": null,
+          "dog_id": 3,
+          "created_at": "2024-02-20T03:02:58.763Z",
+          "updated_at": "2024-02-20T03:02:58.763Z"
+      }
+  },
+  {
+      "id": 4,
+      "dogid": 70734967,
+      "type": "Dog",
+      "breeds": "Australian Shepherd",
+      "colors": "Black",
+      "age": "Young",
+      "gender": "Female",
+      "size": "Medium",
+      "tags": "Friendly, Affectionate, Gentle, Smart, Curious, Quiet, Athletic, Loves Kisses",
+      "name": "Fancy",
+      "favorited": false,
+      "created_at": "2024-02-20T03:02:58.803Z",
+      "updated_at": "2024-02-20T03:02:58.803Z",
+      "attributes": {
+          "id": 4,
+          "spayed_neutered": true,
+          "house_trained": true,
+          "special_needs": false,
+          "shots_current": true,
+          "dog_id": 4,
+          "created_at": "2024-02-20T03:02:58.843Z",
+          "updated_at": "2024-02-20T03:02:58.843Z"
+      },
+      "environment": {
+          "id": 4,
+          "children": true,
+          "dogs": true,
+          "cats": true,
+          "dog_id": 4,
+          "created_at": "2024-02-20T03:02:58.883Z",
+          "updated_at": "2024-02-20T03:02:58.883Z"
+      },
+      "photos": [
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734967/1/?bust=1708020094",
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734967/2/?bust=1708020095"
+      ],
+      "contact": {
+          "id": 4,
+          "email": "almofeasttexas@gmail.com",
+          "phone": null,
+          "dog_id": 4,
+          "created_at": "2024-02-20T03:02:59.005Z",
+          "updated_at": "2024-02-20T03:02:59.005Z"
+      }
+  },
+  {
+      "id": 5,
+      "dogid": 70734964,
+      "type": "Dog",
+      "breeds": "Beagle",
+      "colors": "Brown / Chocolate",
+      "age": "Young",
+      "gender": "Male",
+      "size": "Medium",
+      "tags": "Friendly, Affectionate, Loyal, Gentle, Playful, Smart, Funny",
+      "name": "Mars ",
+      "favorited": false,
+      "created_at": "2024-02-20T03:02:59.049Z",
+      "updated_at": "2024-02-20T03:02:59.049Z",
+      "attributes": {
+          "id": 5,
+          "spayed_neutered": true,
+          "house_trained": false,
+          "special_needs": false,
+          "shots_current": true,
+          "dog_id": 5,
+          "created_at": "2024-02-20T03:02:59.093Z",
+          "updated_at": "2024-02-20T03:02:59.093Z"
+      },
+      "environment": {
+          "id": 5,
+          "children": null,
+          "dogs": true,
+          "cats": true,
+          "dog_id": 5,
+          "created_at": "2024-02-20T03:02:59.133Z",
+          "updated_at": "2024-02-20T03:02:59.133Z"
+      },
+      "photos": [
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734964/2/?bust=1708020054",
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734964/1/?bust=1708020053",
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734964/3/?bust=1708020055",
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734964/4/?bust=1708020055",
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734964/5/?bust=1708020056",
+          "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734964/6/?bust=1708020057"
+      ],
+      "contact": {
+          "id": 5,
+          "email": "traceymrobertson@aol.com",
+          "phone": "2057920197",
+          "dog_id": 5,
+          "created_at": "2024-02-20T03:02:59.433Z",
+          "updated_at": "2024-02-20T03:02:59.433Z"
+      }
+  }
+]
