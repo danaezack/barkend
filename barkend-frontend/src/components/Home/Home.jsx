@@ -26,7 +26,7 @@ function Home({ allDogs }) {
 
   return (
     <main className='home-container'>
-      <Header allDogs={allDogs} />
+      <Header setFilteredDogs={setFilteredDogs} allDogs={allDogs} />
       <div className='content-container'>
         <Filter 
           selectedSizes={selectedSizes} 
