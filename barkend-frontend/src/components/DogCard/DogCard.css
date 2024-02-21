@@ -21,7 +21,8 @@
 }
 
 .dog-card img {
-  height: 250px;
+  height: 350px;
+  width: auto;
   object-fit: cover;
 }
 
@@ -31,9 +32,13 @@
   margin: 2px 0;
   height: 30px;
   text-align: center;
+  font-size: 1em;
   padding: 5px;
 }
 
+.dog-card h2 {
+  font-size: 1.25em;
+}
 .dog-card > h3, h4 {
   font-family: var(--secondary-font);
   font-weight: 300;
