@@ -1,26 +1,27 @@
 import './Filter.css';
 import { useState, useEffect } from 'react';
 
-function Filter({ setDogs, sampleAnimals }) {
+function Filter({ setAllDogs, allDogs, setFilteredDogs, filteredDogs }) {
   const [selectedSizes, setSelectedSizes] = useState([]);
 
   const handleSizeToggle = (size) => {
     setSelectedSizes(prevSizes => {
       if (prevSizes.includes(size)) {
-        return prevSizes.filter(prevSize => prevSize !== size)
+        // If the size is already selected, remove it from the array
+        return prevSizes.filter(prevSize => prevSize !== size);
       } else {
+        // If the size is not selected, add it to the array
         return [...prevSizes, size];
       }
     });
-    filterBySize();
-  }
+  };
 
   const filterBySize = () => {
-    if (selectedSizes.length ===  0) {
-      setDogs(sampleAnimals);
+    if (selectedSizes.length ===   0) {
+      setFilteredDogs(allDogs);
     } else {
-      const dogsBySize = sampleAnimals.filter(dog => selectedSizes.includes(dog.size));
-      setDogs(dogsBySize);
+      const dogsBySize = allDogs.filter(dog => selectedSizes.includes(dog.size));
+      setFilteredDogs(dogsBySize);
     }
   };
 
@@ -28,11 +29,10 @@ function Filter({ setDogs, sampleAnimals }) {
     filterBySize();
   }, [selectedSizes]);
 
-
   return (
-    <div className ='filter-container'>
+    <div className='filter-container'>
       <div className='size-toggle-buttons'>
-      <button
+        <button
           className={`size-toggle-btn ${selectedSizes.includes('Small') && 'active'}`}
           onClick={() => handleSizeToggle('Small')}
         >
@@ -50,7 +50,7 @@ function Filter({ setDogs, sampleAnimals }) {
         >
           Large
         </button>
-        </div>
+      </div>
     </div>
   );
 }

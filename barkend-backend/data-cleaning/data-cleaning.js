@@ -23,11 +23,13 @@ function simplifyData() {
     }
   }).filter(dog => dog.photos.length)
 
-  console.log(cleanData);
-  console.log(cleanData.length);
+  // console.log(cleanData);
+  // console.log(cleanData.length);
   return cleanData;
 }
 
 // simplifyData();
 
 module.exports = simplifyData;
+
+

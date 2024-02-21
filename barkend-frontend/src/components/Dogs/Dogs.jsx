@@ -1,14 +1,11 @@
 import './Dogs.css';
 import DogCard from '../DogCard/DogCard.jsx'
 
-function Dogs({ dogs }) {
+function Dogs({ filteredDogs, allDogs }) {
 
   return (
     <div className='dogs-container'>
-      {dogs.map(dog => {
-    
-        const photoUrl = dog.photos?.[0]?.medium ?? null;
-
+      {filteredDogs.map(dog => {
         return (
           <DogCard
             key={dog.id}
@@ -16,8 +13,8 @@ function Dogs({ dogs }) {
             age={dog.age}
             name={dog.name}
             size={dog.size}
-            breed={dog.breeds.primary}
-            photo={photoUrl}
+            breed={dog.breeds}
+            photo={dog.photos[0]}
           />
         )
       })}

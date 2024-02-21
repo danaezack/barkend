@@ -1,9 +1,9 @@
 describe('User flows for home page', () => {
   beforeEach(() => {
-    // cy.intercept('GET', 'http://localhost:3000/', {
-    //   statusCode: 200,
-    //   fixture: 'dogs'
-    // })
+    cy.intercept('GET', 'http://localhost:3001/api/v1/dogs', {
+      statusCode: 200,
+      fixture: 'dogs'
+    })
     cy.visit('http://localhost:3000/')
   })
   
