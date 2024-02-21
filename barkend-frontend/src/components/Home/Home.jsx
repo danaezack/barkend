@@ -7,7 +7,7 @@ import Dogs from '../Dogs/Dogs.jsx';
 import PropTypes from 'prop-types';
 import './Home.css';
 
-function Home({ allDogs }) {
+function Home({ allDogs, error }) {
   const [breed, setBreed] = useState('');
   const [selectedSizes, setSelectedSizes] = useState([]);
   const [filteredDogs, setFilteredDogs] = useState(allDogs); 
@@ -34,9 +34,23 @@ function Home({ allDogs }) {
   }, [filteredDogs]);
 
   function viewAllDogs() {
-    setFilteredDogs(allDogs)
+    setFilteredDogs(allDogs);
     setSelectedSizes([]); 
     setBreed('');
+  }
+
+  function renderDogsContainer() {
+    if (error) {
+      return <p>{error}</p>
+    };
+    if (initialLoad) {
+      return <p className='loading-msg'>Loading dogs...</p>
+    };
+    if (!filteredDogs.length) {
+      return <p className='no-match-msg'>Sorry, there are no dogs that match! Try again.</p>
+    } else {
+      return <Dogs filteredDogs={filteredDogs} />
+    }
   }
 
   return (
@@ -51,18 +65,36 @@ function Home({ allDogs }) {
           <Search 
             setBreed={setBreed}
           />
-           {initialLoad ? (
-            <p className='loading-msg'>Loading dogs...</p>
-          ) : !filteredDogs.length ? (
-            <p className='no-match-msg'>Sorry, there are no dogs that match! Try again.</p>
-          ) : (
-            <Dogs filteredDogs={filteredDogs} />
-          )}
+        {renderDogsContainer()}
         </div>
       </div>
     </main>
   );
 }
+
+
+
+// {error && (
+//   // Display error message if there's an error
+//   <p>{error}</p>
+// )}
+
+// {initialLoad && (
+//   // Display loading message while fetching data
+//   <p className='loading-msg'>Loading dogs...</p>
+// )}
+
+// {!initialLoad && !error && !filteredDogs.length && (
+//   // Display message when there are no matching dogs
+//   <p className='no-match-msg'>Sorry, there are no dogs that match! Try again.</p>
+// )}
+
+// {!initialLoad && !error && filteredDogs.length > 0 && (
+//   // Render Dogs component if there are matching dogs
+//   <Dogs filteredDogs={filteredDogs} />
+// )}
+
+
 
 export default Home;
 

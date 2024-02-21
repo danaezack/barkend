@@ -4,7 +4,7 @@ export default function getAllDogs() {
       if (response.ok) {
         return response.json();
       } else {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`Failed to retrieve dogs... Please try again later.`);
       }
     })
 }
