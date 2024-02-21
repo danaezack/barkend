@@ -41,7 +41,7 @@ function Home({ allDogs, error }) {
 
   function renderDogsContainer() {
     if (error) {
-      return <p>{error}</p>
+      return <p className='error-msg'>{error}</p>
     };
     if (initialLoad) {
       return <p className='loading-msg'>Loading dogs...</p>

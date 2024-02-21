@@ -68,7 +68,7 @@ describe('User flows for home page', () => {
     cy.get('input[name=breed-search]').type('asdlkgjhasdoighu');
     cy.get('.search-btn').click();
     cy.get('.dog-card').should('have.length', 0);
-    cy.get('.no-match-msg').contains('Sorry, there are no dogs! Try again.');
+    cy.get('.no-match-msg').contains('Sorry, there are no dogs that match! Try again.');
   })
 
   it('filters by one dog size or multiple dog sizes and displays corresponding results', () => {
@@ -109,13 +109,13 @@ describe('User flows for home page', () => {
     cy.get('input[name=breed-search]').type('asdlkgjhasdoighu');
     cy.get('.search-btn').click();
     cy.get('.dog-card').should('not.exist');
-    cy.get('.no-match-msg').contains('Sorry, there are no dogs! Try again.');
+    cy.get('.no-match-msg').contains('Sorry, there are no dogs that match! Try again.');
   })
 
   it('should notify the user if the API fails to fetch the dog data', () => {
     cy.intercept('GET', 'http://localhost:3001/api/v1/dogs', {
       statusCode: 500
     })
-    cy.get('.no-match-msg').contains('Sorry, there are no dogs! Try again.');
+    cy.get('.error-msg').contains('Failed to retrieve dogs... Please try again later.');
   })
 })
