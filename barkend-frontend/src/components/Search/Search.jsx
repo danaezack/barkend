@@ -7,7 +7,7 @@ function Search({ setBreed }) {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     setBreed(breedValue);
-    // setBreedValue(''); 
+    setBreedValue(''); 
   };
 
   return (
@@ -17,6 +17,7 @@ function Search({ setBreed }) {
         type='text'
         placeholder='Search by breed keyword...'
         value={breedValue}
+        name='breed-search'
         onChange={event => setBreedValue(event.target.value)}
       />
       <button className='search-btn' type='submit'>Search</button>

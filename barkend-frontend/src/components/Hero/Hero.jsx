@@ -10,7 +10,7 @@ function Hero({ allDogs, setFilteredDogs}) {
         <div className="action">
           <h2 className="slogan">Where every dog finds their furever home.</h2>
           <Link to="/main">
-            <button>Get Started</button>
+            <button className='get-started-btn'>Get Started</button>
           </Link>
         </div>
       </div>

@@ -19,19 +19,19 @@ function Filter({ selectedSizes, setSelectedSizes }) {
     <div className='filter-container'>
       <div className='size-toggle-buttons'>
         <button
-          className={`size-toggle-btn ${selectedSizes.includes('Small') ? 'active' : ''}`}
+          className={`size-toggle-btn small-btn ${selectedSizes.includes('Small') ? 'active' : ''}`}
           onClick={() => handleSizeToggle('Small')}
         >
           Small
         </button>
         <button
-          className={`size-toggle-btn ${selectedSizes.includes('Medium') ? 'active' : ''}`}
+          className={`size-toggle-btn medium-btn ${selectedSizes.includes('Medium') ? 'active' : ''}`}
           onClick={() => handleSizeToggle('Medium')}
         >
           Medium
         </button>
         <button
-          className={`size-toggle-btn ${selectedSizes.includes('Large') ? 'active' : ''}`}
+          className={`size-toggle-btn large-btn ${selectedSizes.includes('Large') ? 'active' : ''}`}
           onClick={() => handleSizeToggle('Large')}
         >
           Large
