@@ -18,14 +18,14 @@ Barkend is a dog search and filtering application designed to help users find th
 ## Technologies
 - React
 - Node
-- Express
+- Express.js
 - Knex.js
 - PostgreSQL
 - AWS
 - Cypress
 
 
-## Contributers
+## Contributors
 - Jamie Francisco [github](https://github.com/jamiefrancisco) | <0jamiefrancisco@gmail.com> 
 - Dana Zack [github](https://github.com/dana-zack) | <danaezack@gmail.com>
 - Ricky Tran [github](https://github.com/rickytrandev) | <rickytran.dev@gmail.com>
