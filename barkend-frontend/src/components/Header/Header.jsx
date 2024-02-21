@@ -1,10 +1,10 @@
 import './Header.css';
 import { Link } from 'react-router-dom';
 
-function Header({ setDogs, cleanAnimals }) {
+function Header({ setDogs, sampleAnimals }) {
   
   function viewAllDogs() {
-    setDogs(cleanAnimals)
+    setDogs(sampleAnimals)
   }
   
   return (

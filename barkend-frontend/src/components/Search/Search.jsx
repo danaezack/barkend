@@ -2,12 +2,12 @@ import './Search.css';
 import { sampleAnimals } from '../../sampleDoggyData.js';
 import { useState } from 'react'
 
-function Search({ setDogs, cleanAnimals }) {
+function Search({ setDogs, sampleAnimals }) {
   const [breed, setBreed] = useState('');
 
   const searchByBreed = (event, breed) => {
     event.preventDefault();
-    const dogsByBreed = cleanAnimals.filter(dog => {
+    const dogsByBreed = sampleAnimals.filter(dog => {
       return dog.breeds.primary.toLowerCase().includes(breed.toLowerCase());
     });
     setDogs(dogsByBreed);

@@ -9,13 +9,10 @@ import Hero  from '../HeroBanner/Hero.jsx'
 
 function App() {
   
-  const cleanAnimals = sampleAnimals.filter(dog => {
-    return dog.photos.length;
-  })
 
-  const [dogs, setDogs] = useState(cleanAnimals);
+  const [dogs, setDogs] = useState(sampleAnimals);
 
-  console.log(cleanAnimals)
+
 
   return (
     <main className='App'>

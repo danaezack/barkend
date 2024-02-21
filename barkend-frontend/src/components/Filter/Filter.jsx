@@ -1,26 +1,57 @@
 import './Filter.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-function Filter({ setDogs, cleanAnimals }) {
-  const [size, setSize] = useState('')
+function Filter({ setDogs, sampleAnimals }) {
+  const [selectedSizes, setSelectedSizes] = useState([]);
 
-  const filterBySize = (event, size) => {
-    event.preventDefault()
-    const dogsBySize = cleanAnimals.filter(dog => dog.size === size);
-    setDogs(dogsBySize)
-    setSize('')
+  const handleSizeToggle = (size) => {
+    setSelectedSizes(prevSizes => {
+      if (prevSizes.includes(size)) {
+        return prevSizes.filter(prevSize => prevSize !== size)
+      } else {
+        return [...prevSizes, size];
+      }
+    });
+    filterBySize();
   }
 
+  const filterBySize = () => {
+    if (selectedSizes.length ===  0) {
+      setDogs(sampleAnimals);
+    } else {
+      const dogsBySize = sampleAnimals.filter(dog => selectedSizes.includes(dog.size));
+      setDogs(dogsBySize);
+    }
+  };
+
+  useEffect(() => {
+    filterBySize();
+  }, [selectedSizes]);
+
+
   return (
-    <form className ='filter-container'>
-      <select className='dropdown' value={size} onChange={(event) => setSize(event.target.value) }>
-        <option defaultValue>Choose size</option>
-        <option value='Small'>Small</option>
-        <option value='Medium'>Medium</option>
-        <option value='Large'>Large</option>
-      </select>
-      <button className='filter-btn' type='submit' onClick={(event) => filterBySize(event, size)} >Select</button>
-    </form>
+    <div className ='filter-container'>
+      <div className='size-toggle-buttons'>
+      <button
+          className={`size-toggle-btn ${selectedSizes.includes('Small') && 'active'}`}
+          onClick={() => handleSizeToggle('Small')}
+        >
+          Small
+        </button>
+        <button
+          className={`size-toggle-btn ${selectedSizes.includes('Medium') && 'active'}`}
+          onClick={() => handleSizeToggle('Medium')}
+        >
+          Medium
+        </button>
+        <button
+          className={`size-toggle-btn ${selectedSizes.includes('Large') && 'active'}`}
+          onClick={() => handleSizeToggle('Large')}
+        >
+          Large
+        </button>
+        </div>
+    </div>
   );
 }
 

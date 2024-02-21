@@ -1,19 +1,24 @@
 .filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   width: 20%;
   background-color: rgb(167, 167, 167);
 }
 
-.dropdown {
-  margin-top: 50px;
-  width: 150px;
-  height: 30px;
-  margin-right: 10px;
-  font-size: 18px;
+.size-toggle-buttons {
+  display: flex;
+  gap:  10px;
 }
 
-.filter-btn {
-  height: 30px;
-  font-size: 18px;
-  border: none;
-  border-radius: 2px;
+.size-toggle-btn {
+  padding:  5px  10px;
+  border:  1px solid #ccc;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.size-toggle-btn.active {
+  background-color: #007bff;
+  color: white;
 }

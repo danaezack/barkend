@@ -6,6 +6,9 @@ function Dogs({ dogs }) {
   return (
     <div className='dogs-container'>
       {dogs.map(dog => {
+    
+        const photoUrl = dog.photos?.[0]?.medium ?? null;
+
         return (
           <DogCard
             key={dog.id}
@@ -14,7 +17,7 @@ function Dogs({ dogs }) {
             name={dog.name}
             size={dog.size}
             breed={dog.breeds.primary}
-            photo={dog.photos[0].medium}
+            photo={photoUrl}
           />
         )
       })}
