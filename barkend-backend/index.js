@@ -4,16 +4,22 @@ const sampleDogs =require('./data-cleaning/sampleData.js');
 const db = require('./db/db')
 const router = require('./routes/router.js')
 const knexfile = require ('./db/knexfile.js')
+const cors = require('cors');
 
 const simplifyData = require('./data-cleaning/data-cleaning.js')
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
+
+app.use(cors());
 app.use(express.json());
 app.use(router);
 
-console.log(simplifyData());
+// console.log(simplifyData());
 
 app.get('/api/v1/dogs', async (req, res) => {
   try {

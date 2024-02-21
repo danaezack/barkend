@@ -15,7 +15,6 @@ function DogDetails({ dogs }) {
   const [isFavorited, setIsFavorited] = useState(false)
   const { id } = useParams()
   let dog = dogs.find(dog => dog.id === Number(id))
-  let images = dog.photos.map(photo => photo.full)
 
   function handleClick() {
     isFavorited ? setIsFavorited(false) : setIsFavorited(true)
@@ -25,8 +24,10 @@ function DogDetails({ dogs }) {
     <div className="details-container">
       <aside className="image-carousel">
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-          {images.map(image => (
-            <SwiperSlide><img className='dog-img' src={image} alt="" /></SwiperSlide>
+          {dog.photos.map((image, index) => (
+            <SwiperSlide key={index}>
+              <img key={index} className='dog-img' src={image} alt=""/>
+            </SwiperSlide>
           ))}
         </Swiper>
       </aside>
@@ -40,9 +41,7 @@ function DogDetails({ dogs }) {
           <h1 className='name'>Hi, I'm {dog.name}.</h1>
           <p className='sub-details'>{dog.age} • {dog.gender} • {dog.breeds.primary}</p>
           <ul>{dog.name}'s Qualities:
-          {dog.tags.map(tag => (
-            <li> • {tag}</li>
-          ))}
+            <p>{dog.tags}</p>
           </ul>
         </div>
         <div className="inquire-container">

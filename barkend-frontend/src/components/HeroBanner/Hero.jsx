@@ -2,10 +2,10 @@ import './Hero.css'
 import Header from '../Header/Header'
 import { Link } from 'react-router-dom'
 
-function Hero({ cleanAnimals, setDogs}) {
+function Hero({ sampleAnimals, setDogs}) {
   return (
     <>
-      <Header setDogs={setDogs} cleanAnimals={cleanAnimals}/>
+      <Header setDogs={setDogs} sampleAnimals={sampleAnimals}/>
       <div className="hero">
         <div className="action">
           <h2 className="slogan">Where every dog finds their furever home.</h2>
