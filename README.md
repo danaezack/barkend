@@ -2,7 +2,7 @@
 
 ## Description
 
-Barkend is a dog search and filtering application designed to help users find their purfect companion. In it's current state, users can easily search for dogs based on size. Whether you're looking for a playful Labrador Retriever or a loyal German Shepherd, Barkend makes it simple to discover dogs that need a furever home. 
+Barkend is a dog search and filtering application designed to help users find their purfect companion. In it's current state, users can easily search for dogs based on breed keyword and/or filter dogs by size. Whether you're looking for a playful Labrador Retriever or a loyal German Shepherd, Barkend makes it simple to discover dogs that need a furever home. 
 
 ## Installation
 ### In your terminal...
