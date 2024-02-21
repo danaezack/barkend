@@ -20,8 +20,6 @@ function App() {
       })
   }, [])
 
-  console.log(allDogs)
-
   return (
     <main className='App'>
       <Routes>
