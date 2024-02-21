@@ -11,6 +11,7 @@ function Home({ allDogs }) {
   const [breed, setBreed] = useState('');
   const [selectedSizes, setSelectedSizes] = useState([]);
   const [filteredDogs, setFilteredDogs] = useState(allDogs); 
+  const [initialLoad, setInitialLoad] = useState(true);
 
   useEffect(() => {
     let filtered = allDogs;
@@ -23,12 +24,24 @@ function Home({ allDogs }) {
       filtered = filtered.filter(dog => selectedSizes.includes(dog.size));
     }
 
-    setFilteredDogs(filtered); 
+    setFilteredDogs(filtered);
   }, [breed, selectedSizes, allDogs]);
+
+  useEffect(() => {
+    if (filteredDogs.length >  0) {
+      setInitialLoad(false);
+    }
+  }, [filteredDogs]);
+
+  function viewAllDogs() {
+    setFilteredDogs(allDogs)
+    setSelectedSizes([]); 
+    setBreed('');
+  }
 
   return (
     <main className='home-container'>
-      <Header allDogs={allDogs} setFilteredDogs={setFilteredDogs}/>
+      <Header viewAllDogs={viewAllDogs} />
       <div className='content-container'>
         <Filter 
           selectedSizes={selectedSizes} 
@@ -38,7 +51,13 @@ function Home({ allDogs }) {
           <Search 
             setBreed={setBreed}
           />
-          {!filteredDogs.length ? <p>Sorry, there are no dogs that match! Try again.</p> : <Dogs filteredDogs={filteredDogs} /> }
+           {initialLoad ? (
+            <p className='loading-msg'>Loading dogs...</p>
+          ) : !filteredDogs.length ? (
+            <p className='no-match-msg'>Sorry, there are no dogs that match! Try again.</p>
+          ) : (
+            <Dogs filteredDogs={filteredDogs} />
+          )}
         </div>
       </div>
     </main>

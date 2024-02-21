@@ -4,15 +4,15 @@ import PropTypes from 'prop-types';
 import Header from '../Header/Header'
 import './Hero.css'
 
-function Hero({ allDogs, setFilteredDogs}) {
+function Hero() {
   return (
     <>
-      <Header allDogs={allDogs} setFilteredDogs={setFilteredDogs}/>
+      <Header />
       <div className="hero">
         <div className="action">
           <h2 className="slogan">Where every dog finds their furever home.</h2>
           <Link to="/main">
-            <button>Get Started</button>
+            <button className='get-started-btn'>Get Started</button>
           </Link>
         </div>
       </div>

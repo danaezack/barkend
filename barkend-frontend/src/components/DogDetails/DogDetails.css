@@ -23,6 +23,7 @@ p {
   width: 3%;
   cursor: pointer;
   transition: transform .7s;
+  display: none;
 }
 
 .hrt-btn:hover {

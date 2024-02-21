@@ -9,22 +9,20 @@ import './App.css';
 
 function App() {
   const [allDogs, setAllDogs] = useState([]);
-  const [filteredDogs, setFilteredDogs] = useState([]);
 
   useEffect(() => {
     getAllDogs()
       .then(data => {
         console.log(data)
         setAllDogs(data.dogs)
-        setFilteredDogs(data.dogs);
       })
   }, [])
 
   return (
     <main className='App'>
       <Routes>
-        <Route path='/' element={<Hero setFilteredDogs={setFilteredDogs} allDogs={allDogs}/>}/>
-        <Route path='/main' element={<Home allDogs={allDogs} setAllDogs={setAllDogs} setFilteredDogs={setFilteredDogs} filteredDogs={filteredDogs}/>}/>
+        <Route path='/' element={<Hero allDogs={allDogs}/>}/>
+        <Route path='/main' element={<Home allDogs={allDogs} setAllDogs={setAllDogs} />}/>
         <Route path='/dog-details/:id' element={<DogDetails allDogs={allDogs}/>} />
         <Route path='*' element={<Error/>}/>
       </Routes>
