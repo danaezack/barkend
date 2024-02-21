@@ -36,7 +36,7 @@ function Home({ allDogs }) {
           <Search 
             setBreed={setBreed}
           />
-          {!filteredDogs.length ? <p>Sorry, there are no dogs that match! Try again.</p> : <Dogs filteredDogs={filteredDogs} /> }
+          {!filteredDogs.length ? <p className='no-match-msg'>Sorry, there are no dogs that match! Try again.</p> : <Dogs filteredDogs={filteredDogs} /> }
         </div>
       </div>
     </main>
