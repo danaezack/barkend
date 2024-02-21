@@ -1,19 +1,23 @@
-.card-link {
-  text-decoration: none;
-  color: black;
-}
 
 .dog-card {
   display: flex;
   flex-direction: column;
- justify-content: space-between;
-  border: 2px solid black;
-  margin: 20px;
+  justify-content: space-between;
+  /* border: 3px solid var(--secondary-color); */
+  border-radius: 25px;
+  margin: 25px;
   width: 20vw;
   height: auto;
   min-width: 150px;
   min-height: 350px;
-  /* overflow: hidden; */
+  overflow: hidden;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  transition: .5s ease-out;
+}
+
+.dog-card:hover {
+  transform: scale(1.1);
 }
 
 .dog-card img {
@@ -25,5 +29,12 @@
 .dog-card h3,
 .dog-card h4 {
   margin: 2px 0;
+  height: 30px;
   text-align: center;
+  padding: 5px;
+}
+
+.dog-card > h3, h4 {
+  font-family: var(--secondary-font);
+  font-weight: 300;
 }

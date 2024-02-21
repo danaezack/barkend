@@ -1,9 +1,6 @@
 import './Filter.css';
-import { useState } from 'react';
 
 function Filter({ selectedSizes, setSelectedSizes }) {
-
-
   const handleSizeToggle = (size) => {
     setSelectedSizes(prevSizes => {
       if (prevSizes.includes(size)) {
@@ -17,6 +14,7 @@ function Filter({ selectedSizes, setSelectedSizes }) {
 
   return (
     <div className='filter-container'>
+      <h2>Filter By:</h2>
       <div className='size-toggle-buttons'>
         <button
           className={`size-toggle-btn ${selectedSizes.includes('Small') ? 'active' : ''}`}

@@ -13,7 +13,6 @@ function Header({ setFilteredDogs, allDogs }) {
         <h1 className='page-title'>BarkEnd</h1>
       </Link>
       <div className='right-header'>
-        <p className='welcome-msg'>Welcome, User</p>
         <nav className='nav-bar'>
           <Link to=''>
             <button className='nav-btn'>Saved Dogs</button>
@@ -22,6 +21,7 @@ function Header({ setFilteredDogs, allDogs }) {
             <button className='nav-btn' onClick={viewAllDogs}>All Dogs</button>
           </Link>
         </nav>
+        <p className='welcome-msg'>Welcome, User</p>
       </div>
     </header>
   );
