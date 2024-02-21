@@ -10,18 +10,15 @@ import { Routes, Route } from 'react-router-dom';
 
 function App() {
   
-  const cleanAnimals = sampleAnimals.filter(dog => {
-    return dog.photos.length;
-  })
 
-  const [dogs, setDogs] = useState(cleanAnimals);
+  const [dogs, setDogs] = useState(sampleAnimals);
 
-  console.log(cleanAnimals)
+
 
   return (
     <main className='App'>
       <Routes>
-        <Route path='/' element={<Home dogs={dogs} setDogs={setDogs} cleanAnimals={cleanAnimals}/>}/>
+        <Route path='/' element={<Home dogs={dogs} setDogs={setDogs} sampleAnimals={sampleAnimals}/>}/>
         <Route path='/dog-details/:id' element={<DogDetails dogs={dogs}/>} />
         <Route path='*' element={<Error/>}/>
       </Routes>

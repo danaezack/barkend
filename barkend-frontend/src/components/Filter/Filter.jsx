@@ -1,7 +1,7 @@
 import './Filter.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-function Filter({ setDogs, cleanAnimals }) {
+function Filter({ setDogs, sampleAnimals }) {
   const [selectedSizes, setSelectedSizes] = useState([]);
 
   const handleSizeToggle = (size) => {
@@ -16,9 +16,18 @@ function Filter({ setDogs, cleanAnimals }) {
   }
 
   const filterBySize = () => {
-    const dogsBySize = cleanAnimals.filter(dog => selectedSizes.includes(dog.size));
-    setDogs(dogsBySize)
-  }
+    if (selectedSizes.length ===  0) {
+      setDogs(sampleAnimals);
+    } else {
+      const dogsBySize = sampleAnimals.filter(dog => selectedSizes.includes(dog.size));
+      setDogs(dogsBySize);
+    }
+  };
+
+  useEffect(() => {
+    filterBySize();
+  }, [selectedSizes]);
+
 
   return (
     <div className ='filter-container'>
