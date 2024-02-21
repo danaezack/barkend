@@ -38,3 +38,7 @@ a {
   margin: 0;
 }
 
+.saved-dogs-btn {
+  display: none;
+}
+
