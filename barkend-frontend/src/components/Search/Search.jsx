@@ -1,28 +1,25 @@
 import './Search.css';
-import { useState } from 'react'
+import { useState } from 'react';
 
-function Search({ setAllDogs, allDogs }) {
-  const [breed, setBreed] = useState('');
+function Search({ setBreed }) {
+  const [breedValue, setBreedValue] = useState('');
 
-  const searchByBreed = (event, breed) => {
+  const handleSearchSubmit = (event) => {
     event.preventDefault();
-    const dogsByBreed = allDogs.filter(dog => {
-      return dog.breeds.toLowerCase().includes(breed.toLowerCase());
-    });
-    setAllDogs(dogsByBreed);
-    setBreed('')
-  }
+    setBreed(breedValue);
+    // setBreedValue(''); 
+  };
 
   return (
-    <form className ='search-container'>
-      <input className='search-input'
-      type='text'
-      placeholder='Search by breed keyword...'
-      name='breed-search'
-      value={breed}
-      onChange={event => setBreed(event.target.value)}
+    <form className='search-container' onSubmit={handleSearchSubmit}>
+      <input
+        className='search-input'
+        type='text'
+        placeholder='Search by breed keyword...'
+        value={breedValue}
+        onChange={event => setBreedValue(event.target.value)}
       />
-      <button className='search-btn' onClick={event => searchByBreed(event, breed)}>Search</button>
+      <button className='search-btn' type='submit'>Search</button>
     </form>
   );
 }

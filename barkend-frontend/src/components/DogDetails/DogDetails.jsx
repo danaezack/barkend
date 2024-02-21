@@ -11,10 +11,10 @@ import { useState } from 'react';
 
 
 
-function DogDetails({ dogs }) {
+function DogDetails({ allDogs }) {
   const [isFavorited, setIsFavorited] = useState(false)
   const { id } = useParams()
-  let dog = dogs.find(dog => dog.id === Number(id))
+  let dog = allDogs.find(dog => dog.id === Number(id))
 
   function handleClick() {
     isFavorited ? setIsFavorited(false) : setIsFavorited(true)
@@ -32,7 +32,7 @@ function DogDetails({ dogs }) {
         </Swiper>
       </aside>
       <main className="dog-details">
-        <Link to={'/'}>
+        <Link to={'/main'}>
           <img className='x-btn' src={xBtn} alt="close button" />
         </Link>
         <img onClick={() => handleClick()} className={isFavorited ? 'hrt-btn hidden' : 'hrt-btn'} src={hrtBtn} alt="close button"/>
