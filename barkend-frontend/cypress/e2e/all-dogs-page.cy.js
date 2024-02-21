@@ -33,6 +33,8 @@ describe('User flows for all dogs page', () => {
     cy.url().should('eq', 'http://localhost:3000/dog-details/1');
     cy.get('.image-carousel').find('img').first().should('have.attr', 'src', 'https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734971/1/?bust=1708020281');
     cy.get('.image-carousel').find('img').last().should('have.attr', 'src', 'https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/70734971/3/?bust=1708020282');
+    cy.get('.swiper-button-next').should('exist')
+    cy.get('.swiper-button-prev').should('exist')
     cy.get('.name').contains(`Hi, I'm Whiskey`);
     cy.get('.sub-details').contains('Adult • Male • Cardigan Welsh Corgi');
     cy.get('ul').contains(`Whiskey's Qualities`);

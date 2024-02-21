@@ -15,10 +15,10 @@ describe('User flows for hero (home) page', () => {
     });
   })
 
-  it('navigates to/from the hero page by all navigation options', () => {
+  it('navigates to/from the hero (home) page by all navigation options', () => {
     cy.get('.get-started-btn').click();
     cy.url().should('eq', 'http://localhost:3000/main');
-    cy.go('back');
+    cy.get('.page-title').click();
     cy.url().should('eq', 'http://localhost:3000/');
     cy.get('.all-dogs-btn').click();
     cy.url().should('eq', 'http://localhost:3000/main');
