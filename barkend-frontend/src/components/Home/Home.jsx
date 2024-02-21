@@ -1,9 +1,11 @@
-import './Home.css';
+import { dogShape } from '../../propTypes/dogShape.js';
+import { useState, useEffect } from 'react';
 import Header from '../Header/Header.jsx';
 import Filter from '../Filter/Filter.jsx';
 import Search from '../Search/Search.jsx';
 import Dogs from '../Dogs/Dogs.jsx';
-import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import './Home.css';
 
 function Home({ allDogs }) {
   const [breed, setBreed] = useState('');
@@ -63,3 +65,8 @@ function Home({ allDogs }) {
 }
 
 export default Home;
+
+Home.propTypes = {
+  allDogs: PropTypes.arrayOf(dogShape).isRequired,
+}
+

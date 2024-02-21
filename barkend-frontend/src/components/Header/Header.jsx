@@ -1,5 +1,7 @@
-import './Header.css';
 import { Link } from 'react-router-dom';
+import { dogShape } from '../../propTypes/dogShape';
+import PropTypes from 'prop-types';
+import './Header.css';
 
 function Header({ viewAllDogs }) {
 
@@ -25,3 +27,8 @@ function Header({ viewAllDogs }) {
 }
 
 export default Header;
+
+Header.propTypes = {
+  allDogs: PropTypes.arrayOf(dogShape).isRequired,
+  setFilteredDogs: PropTypes.func.isRequired,
+}
