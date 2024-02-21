@@ -1,9 +1,16 @@
 .header {
   display: flex;
   justify-content: space-between;
+  background-color: #22311d;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
 }
 
 .page-title {
+  color: inherit;
   font-size: 100px;
   margin: 0;
 }

@@ -1,19 +1,21 @@
 import './Header.css';
 import { Link } from 'react-router-dom';
 
-function Header({ setDogs, sampleAnimals }) {
+function Header({ setFilteredDogs, allDogs }) {
   
   function viewAllDogs() {
-    setDogs(sampleAnimals)
+    setFilteredDogs(allDogs)
   }
   
   return (
     <header className='header'>
-      <h1 className='page-title'>BarkEnd</h1>
+      <Link to='/' > 
+        <h1 className='page-title'>BarkEnd</h1>
+      </Link>
       <div className='right-header'>
         <p className='welcome-msg'>Welcome, User</p>
         <nav className='nav-bar'>
-          <Link to='/'>
+          <Link to=''>
             <button className='nav-btn'>Saved Dogs</button>
           </Link>
           <Link to='/main'>
