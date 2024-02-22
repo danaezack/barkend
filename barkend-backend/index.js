@@ -3,17 +3,22 @@ const express = require('express');
 const db = require('./db/db');
 const router = require('./routes/router.js');
 const cors = require('cors');
-
 const PORT = process.env.PORT || 3001;
 const app = express();
-
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
 
 app.use(cors());
 app.use(express.json());
 app.use(router);
+
+app.use(express.static(path.join(__dirname, '../barkend-frontend/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../barkend-frontend/build', 'index.html'));
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
 
 app.get('/api/v1/dogs', async (req, res) => {
   try {
