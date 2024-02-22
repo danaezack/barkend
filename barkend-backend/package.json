@@ -1,19 +1,18 @@
 {
-  "name": "barkend",
+  "name": "barkend-backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-   "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node index.js"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-      "cors": "^2.8.5",
-      "express": "^4.18.2",
-      "knex": "^3.1.0",
-      "pg": "^8.11.3"
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "knex": "^3.1.0",
+    "pg": "^8.11.3"
   }
 }
