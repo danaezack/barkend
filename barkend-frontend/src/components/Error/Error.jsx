@@ -1,9 +1,9 @@
-import './Error.css'
+import './Error.css';
 
 function Error() {
   return (
-    <h1>Error: 404</h1>
+    <h1 className='not-found-msg'>Error: Page not found...</h1>
   )
-}
+};
 
-export default Error
+export default Error;

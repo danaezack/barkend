@@ -1,6 +1,6 @@
 describe('User flows for hero (home) page', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/')
+    cy.visit('http://localhost:3000/');
   });
   
   it('renders the hero (home) page and expected elements', () => {

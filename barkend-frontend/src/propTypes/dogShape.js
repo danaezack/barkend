@@ -10,5 +10,5 @@ export const dogShape = PropTypes.shape({
   size: PropTypes.string.isRequired,
   tags: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  favorited: PropTypes.bool.isRequired,
+  favorited: PropTypes.bool.isRequired
 });

@@ -7,7 +7,7 @@ import Dogs from '../Dogs/Dogs.jsx';
 import PropTypes from 'prop-types';
 import './Home.css';
 
-function Home({ allDogs }) {
+function Home({ allDogs, error }) {
   const [breed, setBreed] = useState('');
   const [selectedSizes, setSelectedSizes] = useState([]);
   const [filteredDogs, setFilteredDogs] = useState(allDogs); 
@@ -34,9 +34,23 @@ function Home({ allDogs }) {
   }, [filteredDogs]);
 
   function viewAllDogs() {
-    setFilteredDogs(allDogs)
+    setFilteredDogs(allDogs);
     setSelectedSizes([]); 
     setBreed('');
+  }
+
+  function renderDogsContainer() {
+    if (error) {
+      return <p className='error-msg'>{error}</p>;
+    };
+    if (initialLoad) {
+      return <p className='loading-msg'>Loading dogs...</p>;
+    };
+    if (!filteredDogs.length) {
+      return <p className='no-match-msg'>Sorry, there are no dogs that match! Try again.</p>;
+    } else {
+      return <Dogs filteredDogs={filteredDogs} />;
+    }
   }
 
   return (
@@ -51,13 +65,7 @@ function Home({ allDogs }) {
           <Search 
             setBreed={setBreed}
           />
-           {initialLoad ? (
-            <p className='loading-msg'>Loading dogs...</p>
-          ) : !filteredDogs.length ? (
-            <p className='no-match-msg'>Sorry, there are no dogs that match! Try again.</p>
-          ) : (
-            <Dogs filteredDogs={filteredDogs} />
-          )}
+        {renderDogsContainer()}
         </div>
       </div>
     </main>
@@ -68,5 +76,9 @@ export default Home;
 
 Home.propTypes = {
   allDogs: PropTypes.arrayOf(dogShape).isRequired,
-}
+  error: PropTypes.string
+};
 
+Home.defaultProps = {
+  error: null
+};

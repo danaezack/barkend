@@ -1,5 +1,6 @@
 import './DogCard.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function DogCard({ name, size, breed, id, photo, age }) {
   return (
@@ -11,7 +12,18 @@ function DogCard({ name, size, breed, id, photo, age }) {
         <h4>{age} · {size}</h4>
       </div>
     </Link>
-  )
+  );
 }
 
 export default DogCard;
+
+DogCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  size: PropTypes.string.isRequired,
+  breed: PropTypes.string.isRequired,
+  photo: PropTypes.string.isRequired,
+  age: PropTypes.string.isRequired,
+};
+
+
