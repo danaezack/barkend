@@ -11,7 +11,7 @@ const simplifyData = require('../../data-cleaning/data-cleaning.js');
  */
 
 exports.seed = async function(knex) {
- 
+  // Deletes ALL existing entries for cleanliness
   await knex('contact').del();
   await knex('photos').del();
   await knex('environment').del();
@@ -21,7 +21,7 @@ exports.seed = async function(knex) {
   const cleanData = simplifyData();
 
   for (const dog of cleanData) {
-   
+    // Insert dog and get the inserted dog's ID
     const [dogRecord] = await knex('dogs').insert({
       dogid: dog.dogid,
       type: dog.type,
@@ -37,6 +37,7 @@ exports.seed = async function(knex) {
 
     const insertedDogId = dogRecord.id;
 
+    // Insert attributes if they exist
     if (dog.attributes) {
       await knex('attributes').insert({
         spayed_neutered: dog.attributes.spayed_neutered,
@@ -47,6 +48,7 @@ exports.seed = async function(knex) {
       });
     }
 
+    // Insert environment if it exists
     if (dog.environment) {
       await knex('environment').insert({
         children: dog.environment.children,
@@ -56,6 +58,7 @@ exports.seed = async function(knex) {
       });
     }
 
+    // Insert photos if they exist
     if (dog.photos && dog.photos.length > 0) {
       for (const photo of dog.photos) {
         await knex('photos').insert({
@@ -66,6 +69,7 @@ exports.seed = async function(knex) {
       }
     }
 
+    // Insert contact if it exists
     if (dog.contact) {
       await knex('contact').insert({
         email: dog.contact.email,

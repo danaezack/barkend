@@ -21,10 +21,14 @@ function simplifyData() {
         },
       "favorited": false
     }
-  }).filter(dog => dog.photos.length);
+  }).filter(dog => dog.photos.length)
 
+  // console.log(cleanData);
+  // console.log(cleanData.length);
   return cleanData;
 }
+
+// simplifyData();
 
 module.exports = simplifyData;
 
