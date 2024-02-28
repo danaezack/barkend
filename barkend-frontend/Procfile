@@ -1,0 +1,1 @@
+web: cd barkend/barkend-frontend && npm start
