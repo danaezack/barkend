@@ -1,4 +1,3 @@
-
 const express = require('express');
 const sampleDogs =require('./data-cleaning/sampleData.js');
 const db = require('./db/db')
@@ -18,8 +17,6 @@ app.listen(PORT, () => {
 app.use(cors());
 app.use(express.json());
 app.use(router);
-
-// console.log(simplifyData());
 
 app.get('/api/v1/dogs', async (req, res) => {
   try {
@@ -87,3 +84,5 @@ app.delete('/api/v1/dogs/:id', (req, res) => {
   app.locals.dogs.splice(index, 1)
   res.status(200).json(app.locals.dogs);
 });
+
+module.exports = app;
