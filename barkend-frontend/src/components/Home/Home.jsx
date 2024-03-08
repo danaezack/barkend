@@ -10,6 +10,10 @@ import './Home.css';
 function Home({ allDogs, error }) {
   const [breed, setBreed] = useState('');
   const [selectedSizes, setSelectedSizes] = useState([]);
+  const [selectedAges, setSelectedAges] = useState([]);
+  const [gender, setGender] = useState([]);
+  const [fixed, setFixed] = useState([]);
+  const [kidFriendly, setKidFriendly] = useState([])
   const [filteredDogs, setFilteredDogs] = useState(allDogs); 
   const [initialLoad, setInitialLoad] = useState(true);
 
@@ -19,24 +23,38 @@ function Home({ allDogs, error }) {
     if (breed) {
       filtered = filtered.filter(dog => dog.breeds.toLowerCase().includes(breed.toLowerCase()));
     }
-
-    if (selectedSizes.length > 0) {
+    if (selectedSizes.length) {
       filtered = filtered.filter(dog => selectedSizes.includes(dog.size));
+    }
+    if (selectedAges.length) {
+      filtered = filtered.filter(dog => selectedAges.includes(dog.age));
+    }
+    if (gender.length) {
+      filtered = filtered.filter(dog => gender.includes(dog.gender));
+    }
+    if (fixed.length) {
+      filtered = filtered.filter(dog => fixed.includes(dog.attributes.spayed_neutered));
+    }
+    if (kidFriendly.length) {
+      filtered = filtered.filter(dog => kidFriendly.includes(dog.environment.children));
     }
 
     setFilteredDogs(filtered);
-  }, [breed, selectedSizes, allDogs]);
+  }, [breed, selectedSizes, selectedAges, gender, fixed, kidFriendly, allDogs]);
 
   useEffect(() => {
-    if (filteredDogs.length >  0) {
+    if (filteredDogs.length) {
       setInitialLoad(false);
     }
   }, [filteredDogs]);
 
   function viewAllDogs() {
     setFilteredDogs(allDogs);
-    setSelectedSizes([]); 
     setBreed('');
+    setSelectedSizes([]); 
+    setSelectedAges([]);
+    setGender([]);
+    setFixed([]);
   }
 
   function renderDogsContainer() {
@@ -60,6 +78,14 @@ function Home({ allDogs, error }) {
         <Filter 
           selectedSizes={selectedSizes} 
           setSelectedSizes={setSelectedSizes}
+          selectedAges={selectedAges}
+          setSelectedAges={setSelectedAges}
+          gender={gender}
+          setGender={setGender}
+          fixed={fixed}
+          setFixed={setFixed}
+          kidFriendly={kidFriendly}
+          setKidFriendly={setKidFriendly}
         />
         <div className='right-container'>
           <Search 

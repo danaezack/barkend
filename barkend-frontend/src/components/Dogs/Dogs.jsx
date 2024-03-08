@@ -15,6 +15,9 @@ function Dogs({ filteredDogs }) {
             name={dog.name}
             size={dog.size}
             breed={dog.breeds}
+            gender={dog.gender}
+            fixed={dog.attributes.spayed_neutered}
+            kidFriendly={dog.environment.children}
             photo={dog.photos[0]}
           />
         )
