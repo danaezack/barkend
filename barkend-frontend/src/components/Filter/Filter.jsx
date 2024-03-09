@@ -54,7 +54,7 @@ function Filter({ selectedSizes, setSelectedSizes, selectedAges, setSelectedAges
   return (
     <aside className='filter-container'>
       <section className='size-filter-container'>
-        <h2>Size:</h2>
+        <h2>Size</h2>
         <div className='toggle-buttons'>
           <button
             className={`toggle-btn ${selectedSizes.includes('Small') && 'active'}`}
@@ -77,7 +77,7 @@ function Filter({ selectedSizes, setSelectedSizes, selectedAges, setSelectedAges
         </div>
       </section>
       <section className='age-filter-container'>
-        <h2>Age:</h2>
+        <h2>Age</h2>
         <div className='toggle-buttons'>
           <button
             className={`toggle-btn ${selectedAges.includes('Baby') && 'active'}`}
@@ -100,7 +100,7 @@ function Filter({ selectedSizes, setSelectedSizes, selectedAges, setSelectedAges
         </div>
       </section>
       <section className='gender-filter-container'>
-        <h2>Gender:</h2>
+        <h2>Gender</h2>
         <div className='toggle-buttons'>
           <button
             className={`toggle-btn ${gender.includes('Female') && 'active'}`}
@@ -134,7 +134,7 @@ function Filter({ selectedSizes, setSelectedSizes, selectedAges, setSelectedAges
         </div>
       </section>
       <section className='kidfriendly-filter-container'>
-        <h2>Kid Friendly:</h2>
+        <h2>Kid Friendly</h2>
         <div className='toggle-buttons'>
           <button
             className={`toggle-btn ${kidFriendly.includes(true) && 'active'}`}

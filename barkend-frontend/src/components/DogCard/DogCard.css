@@ -1,44 +1,100 @@
+.card-link {
+  margin: .5em;
+}
+
 .dog-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 25px;
-  margin: 25px;
-  width: 20vw;
-  height: auto;
-  min-width: 150px;
-  min-height: 350px;
+  border-radius: 3%;
+  height: 450px;
   overflow: hidden;
-  background-color: var(--main-color);
+  background-color: #f0f0f0;
   color: var(--secondary-color);
   transition: .5s ease-out;
+  padding: 0;
+  box-sizing: border-box;
+  border: 4px solid var(--main-color);
+  /* border-bottom: 4px dotted var(--main-color); */
 }
 
 .dog-card:hover {
+  background-color: var(--main-color);
+  border: 4px solid var(--secondary-color);
+  /* border-bottom: 4px dotted var(--secondary-color); */
   transform: scale(1.1);
 }
 
+.dog-card:hover h3,
+.dog-card:hover h4 {
+  color: white
+}
+
+.dog-card:hover img {
+  box-shadow: 0 3px 10px var(--secondary-color);
+}
+
 .dog-card img {
-  height: 350px;
-  width: auto;
+  display: block;
+  width: 100%;
+  height: 70%;
   object-fit: cover;
+  object-position: 60% 20%;
+  border-radius: 0 0 50% 50%;
+  margin-top: 0;
+  box-sizing: border-box;
+  border-bottom: 2px dotted var(--main-color);
+  box-shadow: 0 3px 10px var(--main-color);
 }
 
 .dog-card h2,
-.dog-card h3,
-.dog-card h4 {
-  margin: 2px 0;
-  height: 30px;
+.dog-card h3 {
+  margin: 0;
+  padding: 5px 0;
   text-align: center;
   font-size: 1em;
-  padding: 5px;
+  color: var(--main-color);
 }
 
 .dog-card h2 {
-  font-size: 1.25em;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--secondary-color);
 }
-.dog-card > h3, h4 {
+
+.dog-card>h3, h4 {
   font-family: var(--secondary-font);
-  font-weight: 300;
-  color: white;
+  font-weight: 600;
+  color: var(--main-color);
+}
+
+.dog-card-content {
+  padding: 0 1em 1em 1em;
+}
+
+
+@media (min-width: 768px) {
+  .dog-card {
+    width: 25vw;
+    max-width: 300px;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .dog-card {
+    width: 45vw;
+    max-width: 300px;
+    margin: 15px auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .dog-card {
+    width: 100vw;
+    margin: 10px auto;
+    flex-grow: 1;
+    flex-basis: 100%;
+    min-width: 100%;
+  }
 }
