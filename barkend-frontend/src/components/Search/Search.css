@@ -53,20 +53,20 @@
      padding: 10px 0;
   }
   .search-input {
-     width: 100% !important;
+     width: 90% !important;
      margin-right: 0;
      margin-bottom: 10px;
   }
   .search-btn {
-     width: 100% !important;
+     width: 90% !important;
   }
  }
  
  @media (max-width: 480px) {
   .search-input {
-     width: 100% !important;
+     width: 90% !important;
   }
   .search-btn {
-     width: 100% !important;
+     width: 90% !important;
   }
  }

@@ -1,15 +1,23 @@
-.hero {
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+ }
+
+ .hero {
   display: flex;
   justify-content: end;
   font-size: 2.5em;
   width: 100%;
-  height: 87.5vh;
+  min-height: 100vh;
   background-image: url('../../images/banner.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.action {
+  background-position: 40%;
+ }
+ 
+ .action {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -19,5 +27,37 @@
   color: white;
   width: 35%;
   margin: 5%;
-}
+ }
 
+ .get-started-btn {
+   color: black;
+   background-color: var(--secondary-color);
+   font-weight: 600;
+ }
+ 
+ @media (max-width: 768px) {
+  .hero {
+     min-height: 100vh;
+  }
+ 
+  .action {
+     width: 90%;
+     margin: 10% auto;
+  }
+ }
+ 
+ @media (max-width: 480px) {
+  .hero {
+     min-height: 100vh;
+  }
+ 
+  .action {
+     width: 95%;
+     margin: 15% auto;
+  }
+
+  .slogan {
+    font-size: em;
+  }
+ }
+ 

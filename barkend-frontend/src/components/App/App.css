@@ -9,12 +9,14 @@
 * {
   font-family: var(--main-font);
   margin: 0;
+  padding: 0;
+  
 }
 
 
 h2 {
   font-family: var(--main-font);
-  font-weight: 300
+  font-weight: 300;
 }
 
 button {
@@ -34,4 +36,3 @@ button {
 button:hover{
   transform: scale(1.1);
 }
-

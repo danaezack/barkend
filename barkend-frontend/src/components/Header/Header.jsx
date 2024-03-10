@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import './Header.css';
 
 function Header({ viewAllDogs }) {
-  return (
+ return (
     <header className='header'>
-      <Link to='/' > 
+      <Link to='/' className='page-title-link'>
         <h1 className='page-title'>BarkEnd</h1>
       </Link>
       <div className='right-header'>
@@ -17,14 +17,14 @@ function Header({ viewAllDogs }) {
             <button className='nav-btn all-dogs-btn' onClick={viewAllDogs}>All Dogs</button>
           </Link>
         </nav>
-        <p className='welcome-msg'>Welcome, User</p>
+        {/* <p className='welcome-msg'>Welcome, User</p> */}
       </div>
     </header>
-  );
+ );
 }
 
 export default Header;
 
 Header.propTypes = {
-  viewAllDogs: PropTypes.func.isRequired
+ viewAllDogs: PropTypes.func.isRequired
 };
