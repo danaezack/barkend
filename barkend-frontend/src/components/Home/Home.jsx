@@ -75,6 +75,7 @@ function Home({ allDogs, error }) {
     <main className='home-container'>
       <Header viewAllDogs={viewAllDogs} />
       <div className='content-container'>
+      <div className="filter-container">
         <Filter 
           selectedSizes={selectedSizes} 
           setSelectedSizes={setSelectedSizes}
@@ -87,6 +88,7 @@ function Home({ allDogs, error }) {
           kidFriendly={kidFriendly}
           setKidFriendly={setKidFriendly}
         />
+        </div>
         <div className='right-container'>
           <Search 
             setBreed={setBreed}

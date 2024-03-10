@@ -1,6 +1,7 @@
 .home-container {
   display: flex;
   flex-direction: column;
+  background-color: lightgray;
 }
 
 .content-container {
@@ -8,7 +9,9 @@
 }
 
 .right-container {
-  width: 85%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
+  
 }
+ 

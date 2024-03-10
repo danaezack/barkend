@@ -43,7 +43,10 @@ function DogDetails({ allDogs }) {
         <img onClick={() => handleClick()} className={isFavorited ? 'hrt-btn-fill flip' : 'hrt-btn-fill hidden'} src={hrtBtnFill} alt="close button"/>
         <div className="main-details-container">
           <h1 className='name'>Hi, I'm {dog.name}.</h1>
-          <p className='sub-details'>{dog.age} • {dog.gender} • {dog.breeds}</p>
+          <p className='sub-details'>{dog.age} • {dog.gender} • {dog.breeds} <br></br></p>
+          {dog && dog.environment && dog.environment.children && (
+ <p>Good with Children</p>
+)}
           <ul>{dog.name}'s Qualities:
             <p className='tags'>{dog.tags}</p>
           </ul>
