@@ -20,7 +20,7 @@ h2 {
 }
 
 button {
-  font-family: var(--secondary-font);
+  font-family: var(--main-font);
   background-color: #212528;
   color: white;
   border: none;
@@ -36,3 +36,7 @@ button {
 button:hover{
   transform: scale(1.1);
 }
+
+
+
+

@@ -14,8 +14,10 @@ function Home({ allDogs, error }) {
   const [gender, setGender] = useState([]);
   const [fixed, setFixed] = useState([]);
   const [kidFriendly, setKidFriendly] = useState([])
-  const [filteredDogs, setFilteredDogs] = useState(allDogs); 
+  const [filteredDogs, setFilteredDogs] = useState(allDogs);
   const [initialLoad, setInitialLoad] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+
 
   useEffect(() => {
     let filtered = allDogs;
@@ -51,7 +53,7 @@ function Home({ allDogs, error }) {
   function viewAllDogs() {
     setFilteredDogs(allDogs);
     setBreed('');
-    setSelectedSizes([]); 
+    setSelectedSizes([]);
     setSelectedAges([]);
     setGender([]);
     setFixed([]);
@@ -67,7 +69,7 @@ function Home({ allDogs, error }) {
     if (!filteredDogs.length) {
       return <p className='no-match-msg'>Sorry, there are no dogs that match! Try again.</p>;
     } else {
-      return <Dogs filteredDogs={filteredDogs} />;
+      return <Dogs filteredDogs={filteredDogs}  currentPage={currentPage} setCurrentPage={setCurrentPage} />;
     }
   }
 
@@ -75,25 +77,26 @@ function Home({ allDogs, error }) {
     <main className='home-container'>
       <Header viewAllDogs={viewAllDogs} />
       <div className='content-container'>
-      <div className="filter-container">
-        <Filter 
-          selectedSizes={selectedSizes} 
-          setSelectedSizes={setSelectedSizes}
-          selectedAges={selectedAges}
-          setSelectedAges={setSelectedAges}
-          gender={gender}
-          setGender={setGender}
-          fixed={fixed}
-          setFixed={setFixed}
-          kidFriendly={kidFriendly}
-          setKidFriendly={setKidFriendly}
-        />
+        <div className="filter-container">
+          <Filter
+            selectedSizes={selectedSizes}
+            setSelectedSizes={setSelectedSizes}
+            selectedAges={selectedAges}
+            setSelectedAges={setSelectedAges}
+            gender={gender}
+            setGender={setGender}
+            fixed={fixed}
+            setFixed={setFixed}
+            kidFriendly={kidFriendly}
+            setKidFriendly={setKidFriendly}
+            setCurrentPage={setCurrentPage}
+          />
         </div>
         <div className='right-container'>
-          <Search 
+          <Search
             setBreed={setBreed}
           />
-        {renderDogsContainer()}
+          {renderDogsContainer()}
         </div>
       </div>
     </main>

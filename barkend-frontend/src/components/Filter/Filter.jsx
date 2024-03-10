@@ -1,7 +1,7 @@
 import {PropTypes, bool, string} from 'prop-types';
 import './Filter.css';
 
-function Filter({ selectedSizes, setSelectedSizes, selectedAges, setSelectedAges, gender, setGender, fixed, setFixed, kidFriendly, setKidFriendly }) {
+function Filter({ selectedSizes, setSelectedSizes, selectedAges, setSelectedAges, gender, setGender, fixed, setFixed, kidFriendly, setKidFriendly, setCurrentPage }) {
 
   const handleToggle = (category, selected) => {
     if (category === 'size') {
@@ -49,7 +49,9 @@ function Filter({ selectedSizes, setSelectedSizes, selectedAges, setSelectedAges
         }
       });
     }
-  }
+
+    setCurrentPage(1);
+  };
 
   return (
     <aside className='filter-container'>
@@ -172,5 +174,6 @@ Filter.propTypes = {
   fixed: PropTypes.arrayOf(bool).isRequired,
   setFixed: PropTypes.func.isRequired,
   kidFriendly: PropTypes.arrayOf(bool).isRequired,
-  setKidFriendly: PropTypes.func.isRequired
+  setKidFriendly: PropTypes.func.isRequired,
+  setCurrentPage: PropTypes.func.isRequired
 }
