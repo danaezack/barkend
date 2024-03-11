@@ -21,7 +21,7 @@ h2 {
 
 button {
   font-family: var(--main-font);
-  background-color: #212528;
+  background-color: var(--secondary-color);
   color: white;
   border: none;
   width: 150px;

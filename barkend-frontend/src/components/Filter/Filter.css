@@ -32,11 +32,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s;
+  transition: transform 0.3s, border-color 0.3s;
+  background-color: var(--main-color);
+  border: 2px solid var(--main-color);
  }
  
- .toggle-btn:not(.active) {
-  transform: scale(1);
+ .toggle-btn:hover {
+  border-color: var(--secondary-color);
+  transform: scale(1.2);
  }
  
  .toggle-btn.active {
@@ -47,6 +50,11 @@
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s, transform 0.3s;
   transform: scale(1.2);
+ }
+ 
+ .toggle-btn.active:hover {
+  border-color: var(--secondary-color);
+  transform: scale(1.4);
  }
  
 
