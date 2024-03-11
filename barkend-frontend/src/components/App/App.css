@@ -1,5 +1,5 @@
 :root {
-  --main-color: #2E4B36;
+  --main-color: #2e4b36;
   --secondary-color: #daa520;
   --swiper-theme-color: black !important;
   --main-font: "Young Serif", serif;
@@ -10,9 +10,11 @@
   font-family: var(--main-font);
   margin: 0;
   padding: 0;
-  
 }
 
+body {
+  background-color: #d3d3d3;
+}
 
 h2 {
   font-family: var(--main-font);
@@ -25,18 +27,14 @@ button {
   color: white;
   border: none;
   width: 150px;
-  Height: 35px;
+  height: 35px;
   margin: 1rem;
   font-size: 1rem;
   border-radius: 15px;
   cursor: pointer;
-  transition: .5s ease-out;
+  transition: 0.5s ease-out;
 }
 
-button:hover{
+button:hover {
   transform: scale(1.1);
 }
-
-
-
-

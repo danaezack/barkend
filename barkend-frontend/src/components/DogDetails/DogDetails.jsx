@@ -11,13 +11,12 @@ import 'swiper/css/navigation';
 import 'swiper/css';
 import './DogDetails.css';
 
-function DogDetails({ allDogs }) {
-  const [isFavorited, setIsFavorited] = useState(false);
+function DogDetails({ addFavorite, allDogs }) {
   const { id } = useParams();
   let dog = allDogs.find(dog => dog.id === Number(id));
 
   function handleClick() {
-    isFavorited ? setIsFavorited(false) : setIsFavorited(true);
+    addFavorite(Number(id));
   }
 
   if (!allDogs.length || !dog) {
@@ -39,8 +38,8 @@ function DogDetails({ allDogs }) {
         <Link to={'/main'}>
           <img className='x-btn' src={xBtn} alt="close button" />
         </Link>
-        <img onClick={() => handleClick()} className={isFavorited ? 'hrt-btn hidden' : 'hrt-btn'} src={hrtBtn} alt="close button"/>
-        <img onClick={() => handleClick()} className={isFavorited ? 'hrt-btn-fill flip' : 'hrt-btn-fill hidden'} src={hrtBtnFill} alt="close button"/>
+        <img onClick={() => handleClick()} className={dog.favorited ? 'hrt-btn hidden' : 'hrt-btn'} src={hrtBtn} alt="close button"/>
+        <img onClick={() => handleClick()} className={dog.favorited ? 'hrt-btn-fill flip' : 'hrt-btn-fill hidden'} src={hrtBtnFill} alt="close button"/>
         <div className="main-details-container">
           <h1 className='name'>Hi, I'm {dog.name}.</h1>
           <p className='sub-details'>{dog.age} • {dog.gender} • {dog.breeds} <br></br></p>

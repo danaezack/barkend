@@ -8,12 +8,21 @@
   border-bottom: 3px solid var(--secondary-color);
   padding: 1rem;
   height: auto;
-  width: 100%;
  }
  
  a {
   text-decoration: none !important;
   color: inherit;
+ }
+
+ .active .saved-dogs-btn{
+   background-color: #daa520;
+   color: black;
+   border: 2px solid #daa520;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+   font-weight: bold;
+   transition: background-color 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s, transform 0.3s;
+   transform: scale(1.2);
  }
  
  .nav-bar {
@@ -38,10 +47,6 @@
  .welcome-msg {
   font-size: 2rem;
   margin: 0;
- }
- 
- .saved-dogs-btn {
-  display: none;
  }
  
  @media (max-width: 768px) {

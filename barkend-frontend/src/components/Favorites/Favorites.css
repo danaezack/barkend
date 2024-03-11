@@ -1,0 +1,6 @@
+.favorites-container {
+  margin: 30px;
+  background-color: #D3D3D3;
+  display: flex;
+  gap: 25px;
+}
