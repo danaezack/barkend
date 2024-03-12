@@ -1,44 +1,49 @@
-import { dogShape } from '../../propTypes/dogShape.js';
-import { useState, useEffect } from 'react';
-import Header from '../Header/Header.jsx';
-import Filter from '../Filter/Filter.jsx';
-import Search from '../Search/Search.jsx';
-import Dogs from '../Dogs/Dogs.jsx';
-import PropTypes from 'prop-types';
-import './Home.css';
+import { dogShape } from "../../propTypes/dogShape.js";
+import { useState, useEffect } from "react";
+import Header from "../Header/Header.jsx";
+import Filter from "../Filter/Filter.jsx";
+import Search from "../Search/Search.jsx";
+import Dogs from "../Dogs/Dogs.jsx";
+import PropTypes from "prop-types";
+import "./Home.css";
 
 function Home({ allDogs, error }) {
-  const [breed, setBreed] = useState('');
+  const [breed, setBreed] = useState("");
   const [selectedSizes, setSelectedSizes] = useState([]);
   const [selectedAges, setSelectedAges] = useState([]);
   const [gender, setGender] = useState([]);
   const [fixed, setFixed] = useState([]);
-  const [kidFriendly, setKidFriendly] = useState([])
+  const [kidFriendly, setKidFriendly] = useState([]);
   const [filteredDogs, setFilteredDogs] = useState(allDogs);
   const [initialLoad, setInitialLoad] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-
 
   useEffect(() => {
     let filtered = allDogs;
 
     if (breed) {
-      filtered = filtered.filter(dog => dog.breeds.toLowerCase().includes(breed.toLowerCase()));
+      filtered = filtered.filter((dog) =>
+        dog.breeds.toLowerCase().includes(breed.toLowerCase())
+      );
     }
     if (selectedSizes.length) {
-      filtered = filtered.filter(dog => selectedSizes.includes(dog.size));
+      filtered = filtered.filter((dog) => selectedSizes.includes(dog.size));
     }
     if (selectedAges.length) {
-      filtered = filtered.filter(dog => selectedAges.includes(dog.age));
+      filtered = filtered.filter((dog) => selectedAges.includes(dog.age));
     }
     if (gender.length) {
-      filtered = filtered.filter(dog => gender.includes(dog.gender));
+      filtered = filtered.filter((dog) => gender.includes(dog.gender));
     }
     if (fixed.length) {
-      filtered = filtered.filter(dog => fixed.includes(dog.attributes.spayed_neutered));
+      filtered = filtered.filter((dog) =>
+        fixed.includes(dog.attributes.spayed_neutered)
+      );
     }
     if (kidFriendly.length) {
-      filtered = filtered.filter(dog => kidFriendly.includes(dog.environment.children));
+      filtered = filtered.filter((dog) =>
+        kidFriendly.includes(dog.environment.children)
+      );
     }
 
     setFilteredDogs(filtered);
@@ -52,7 +57,7 @@ function Home({ allDogs, error }) {
 
   function viewAllDogs() {
     setFilteredDogs(allDogs);
-    setBreed('');
+    setBreed("");
     setSelectedSizes([]);
     setSelectedAges([]);
     setGender([]);
@@ -61,22 +66,32 @@ function Home({ allDogs, error }) {
 
   function renderDogsContainer() {
     if (error) {
-      return <p className='error-msg'>{error}</p>;
-    };
+      return <p className="error-msg">{error}</p>;
+    }
     if (initialLoad) {
-      return <p className='loading-msg'>Loading dogs...</p>;
-    };
+      return <p className="loading-msg">Loading dogs...</p>;
+    }
     if (!filteredDogs.length) {
-      return <p className='no-match-msg'>Sorry, there are no dogs that match! Try again.</p>;
+      return (
+        <p className="no-match-msg">
+          Sorry, there are no dogs that match! Try again.
+        </p>
+      );
     } else {
-      return <Dogs filteredDogs={filteredDogs}  currentPage={currentPage} setCurrentPage={setCurrentPage} />;
+      return (
+        <Dogs
+          filteredDogs={filteredDogs}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+      );
     }
   }
 
   return (
-    <main className='home-container'>
+    <main className="home-container">
       <Header viewAllDogs={viewAllDogs} />
-      <div className='content-container'>
+      <div className="content-container">
         <div className="filter-container">
           <Filter
             selectedSizes={selectedSizes}
@@ -92,10 +107,8 @@ function Home({ allDogs, error }) {
             setCurrentPage={setCurrentPage}
           />
         </div>
-        <div className='right-container'>
-          <Search
-            setBreed={setBreed}
-          />
+        <div className="right-container">
+          <Search setBreed={setBreed} />
           {renderDogsContainer()}
         </div>
       </div>
@@ -107,9 +120,9 @@ export default Home;
 
 Home.propTypes = {
   allDogs: PropTypes.arrayOf(dogShape).isRequired,
-  error: PropTypes.string
+  error: PropTypes.string,
 };
 
 Home.defaultProps = {
-  error: null
+  error: null,
 };

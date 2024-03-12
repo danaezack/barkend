@@ -25,15 +25,6 @@
   align-items: center;
  }
  
- .dog-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 50%;
-  background-color: lightgrey;
- }
- 
  ul {
   list-style-type: none;
   display: flex;
@@ -129,6 +120,17 @@
   height: 60px;
   margin-left: 10px;
  }
+   
+   
+.flip {
+  animation: flip .5s ease-out
+}
+
+@keyframes flip {
+  100% {
+    transform: scaleX(-1) scale(1.2);
+  }
+}
  
  @media (max-width: 1150px) {
   .details-container {
@@ -155,4 +157,9 @@
   .favorites-button-container {
      position: static;
   }
- }
+
+
+.hidden {
+  display: none;
+}
+
