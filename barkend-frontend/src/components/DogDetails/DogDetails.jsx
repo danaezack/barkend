@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { dogShape } from '../../propTypes/dogShape.js';
+import Header from '../Header/Header.jsx';
 import xBtn from "../../images/x-lg.svg";
 import hrtBtn from "../../images/bookmark-heart.svg";
 import hrtBtnFill from "../../images/bookmark-heart-fill.svg";
@@ -11,7 +12,7 @@ import 'swiper/css/navigation';
 import 'swiper/css';
 import './DogDetails.css';
 
-function DogDetails({ addFavorite, allDogs }) {
+function DogDetails({ addFavorite, allDogs, viewAllDogs }) {
   const { id } = useParams();
   let dog = allDogs.find(dog => dog.id === Number(id));
 
@@ -24,6 +25,8 @@ function DogDetails({ addFavorite, allDogs }) {
   }
 
   return (
+        <>
+      <Header viewAllDogs={viewAllDogs} />
     <div className="details-container">
       <aside className="image-carousel">
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
@@ -57,6 +60,7 @@ function DogDetails({ addFavorite, allDogs }) {
         </div>
       </main>
     </div>
+      <>
   );
 }
 
