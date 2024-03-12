@@ -25,42 +25,42 @@ function DogDetails({ addFavorite, allDogs, viewAllDogs }) {
   }
 
   return (
-        <>
+    <>
       <Header viewAllDogs={viewAllDogs} />
-    <div className="details-container">
-      <aside className="image-carousel">
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-          {dog.photos.map((image, index) => (
-            <SwiperSlide key={index}>
-              <img key={index} className='dog-img' src={image} alt=""/>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </aside>
-      <main className="dog-details">
-        <Link to={'/main'}>
-          <img className='x-btn' src={xBtn} alt="close button" />
-        </Link>
-        <img onClick={() => handleClick()} className={dog.favorited ? 'hrt-btn hidden' : 'hrt-btn'} src={hrtBtn} alt="close button"/>
-        <img onClick={() => handleClick()} className={dog.favorited ? 'hrt-btn-fill flip' : 'hrt-btn-fill hidden'} src={hrtBtnFill} alt="close button"/>
-        <div className="main-details-container">
-          <h1 className='name'>Hi, I'm {dog.name}.</h1>
-          <p className='sub-details'>{dog.age} • {dog.gender} • {dog.breeds} <br></br></p>
-          {dog && dog.environment && dog.environment.children && (
- <p>Good with Children</p>
-)}
-          <ul>{dog.name}'s Qualities:
-            <p className='tags'>{dog.tags}</p>
-          </ul>
-        </div>
-        <div className="inquire-container">
-          <h3 className='inquiry'>Interested in {dog.name}?</h3>
-          {dog.contact.email && <p className='sub-details'>email: {dog.contact.email}</p>}
-          {dog.contact.phone && <p className='sub-details'>phone: {dog.contact.phone}</p>}
-        </div>
-      </main>
-    </div>
-      <>
+      <div className="details-container">
+        <aside className="image-carousel">
+          <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+            {dog.photos.map((image, index) => (
+              <SwiperSlide key={index}>
+                <img key={index} className='dog-img' src={image} alt=""/>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </aside>
+        <main className="dog-details">
+          <Link to={'/main'}>
+            <img className='x-btn' src={xBtn} alt="close button" />
+          </Link>
+          <img onClick={() => handleClick()} className={dog.favorited ? 'hrt-btn hidden' : 'hrt-btn'} src={hrtBtn} alt="close button"/>
+          <img onClick={() => handleClick()} className={dog.favorited ? 'hrt-btn-fill flip' : 'hrt-btn-fill hidden'} src={hrtBtnFill} alt="close button"/>
+          <div className="main-details-container">
+            <h1 className='name'>Hi, I'm {dog.name}.</h1>
+            <p className='sub-details'>{dog.age} • {dog.gender} • {dog.breeds} <br></br></p>
+            {dog && dog.environment && dog.environment.children && (
+              <p>Good with Children</p>
+            )}
+            <ul>{dog.name}'s Qualities:
+              <p className='tags'>{dog.tags}</p>
+            </ul>
+          </div>
+          <div className="inquire-container">
+            <h3 className='inquiry'>Interested in {dog.name}?</h3>
+            {dog.contact.email && <p className='sub-details'>email: {dog.contact.email}</p>}
+            {dog.contact.phone && <p className='sub-details'>phone: {dog.contact.phone}</p>}
+          </div>
+        </main>
+      </div>
+    </>
   );
 }
 
