@@ -157,9 +157,8 @@
   .favorites-button-container {
      position: static;
   }
-
+ }
 
 .hidden {
   display: none;
 }
-
