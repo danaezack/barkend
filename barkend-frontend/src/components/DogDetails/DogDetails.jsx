@@ -42,11 +42,11 @@ function DogDetails({ addFavorite, allDogs, viewAllDogs }) {
             <div className="main-details-container">
               <h1 className='name'>Hi, I'm {dog.name}.</h1>
               <p className='sub-details'> {dog.breeds} • {dog.age} • {dog.gender} <br></br></p>
-              <ul>{dog.name}'s Qualities:
+              <ul className="tags-list">MyQualities:
                 <p className='tags'>{dog.tags.replace(/,/g, ' • ')}</p>
               </ul>
               {dog && dog.environment && dog.environment.children && (
-                <p>Good with Children</p>
+                <p className="children-info">Good with Children</p>
               )}
             </div>
           </div>
