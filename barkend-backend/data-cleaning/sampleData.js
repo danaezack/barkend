@@ -113,7 +113,7 @@ const sampleDogs = [
       "colors": {
           "primary": "Brown / Chocolate",
           "secondary": "Black",
-          "tertiary": null
+          "tertiary": null60
       },
       "age": "Young",
       "gender": "Female",

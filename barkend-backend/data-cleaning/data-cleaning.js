@@ -12,7 +12,7 @@ function simplifyData() {
       "size": dog.size,
       "attributes": dog.attributes,
       "environment": dog.environment,
-      "tags": dog.tags.join(', '),
+      "tags": dog.tags.join(' •'),
       "name": dog.name,
       "photos": dog.photos,
       "contact": {
