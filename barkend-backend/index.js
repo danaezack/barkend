@@ -10,11 +10,16 @@ const simplifyData = require('./data-cleaning/data-cleaning.js')
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+const corsOptions = {
+  origin: 'https://bark-end.vercel.app'
+};
+
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(router);
 
