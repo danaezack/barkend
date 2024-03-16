@@ -22,7 +22,7 @@ module.exports = {
       tableName: 'knex_migrations'
     },
     seeds: {
-      directory: './'
+      directory: './seeds'
     },
   },
 };
