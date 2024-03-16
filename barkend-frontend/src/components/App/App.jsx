@@ -9,9 +9,10 @@ import Favorites from "../Favorites/Favorites.jsx";
 import "./App.css";
 
 function App() {
+  const storedFavorites = JSON.parse(localStorage.getItem(["favorites"])) || [];
   const [allDogs, setAllDogs] = useState([]);
   const [error, setError] = useState(null);
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState(storedFavorites);
 
   useEffect(() => {
     getAllDogs()
@@ -19,23 +20,20 @@ function App() {
       .catch((error) => setError(error.message));
   }, []);
 
-  useEffect(() => {
-    setFavorites(allDogs.filter((dog) => dog.favorited === true));
-  }, [allDogs]);
-
   function addFavorite(id) {
-    console.log("hello");
-    setAllDogs((prevDogs) =>
-      prevDogs.map((dog) => {
-        if (dog.id === id) {
-          return {
-            ...dog,
-            favorited: !dog.favorited,
-          };
-        }
-        return dog;
-      })
-    );
+    const dog = allDogs.find((dog) => dog.id === id);
+    const isFavorited = favorites.some((favorite) => favorite.id === id);
+    if (isFavorited) {
+      dog.favorited = false;
+      const newFavorites = favorites.filter((favorite) => favorite.id !== id);
+      setFavorites(newFavorites);
+      localStorage.setItem("favorites", JSON.stringify(newFavorites));
+    } else {
+      dog.favorited = true;
+      const newFavorites = [...favorites, dog];
+      setFavorites(newFavorites);
+      localStorage.setItem("favorites", JSON.stringify(newFavorites));
+    }
   }
 
   return (

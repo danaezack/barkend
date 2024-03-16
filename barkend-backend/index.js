@@ -1,5 +1,4 @@
 const express = require('express');
-const sampleDogs =require('./data-cleaning/sampleData.js');
 const db = require('./db/db')
 const router = require('./routes/router.js')
 const knexfile = require ('./db/knexfile.js')

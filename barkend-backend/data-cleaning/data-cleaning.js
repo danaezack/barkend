@@ -1,4 +1,3 @@
-const sampleDogs = require("./sampleData");
 
 function simplifyData() {
   const cleanData = sampleDogs.map(dog => {
