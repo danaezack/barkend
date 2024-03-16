@@ -25,7 +25,7 @@ function DogDetails({ addFavorite, allDogs, viewAllDogs }) {
   }
 
   return (
-    <>
+        <>
       <Header viewAllDogs={viewAllDogs} />
       <div className="dog-page-wrapper">
         <div className="favorites-button-container">
